@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+
+:root {
+  /* Brand Colors */
+  --school-primary: #035921;
+  --school-primary-strong: #062b20;
+  --school-secondary: #d9b504;
+  --school-secondary-soft: #bfbd9b;
+  --school-focus: #08a63f;
+
+  /* Surface Colors */
+  --school-surface: #ffffff;
+  --school-surface-muted: #f7f8f6;
+
+  /* Text Colors */
+  --school-text: #0d0d0d;
+  --school-text-muted: #5d6963;
+
+  /* Border */
+  --school-border: #dfe5e0;
+
+  /* Legacy Aliases */
+  --darkgreen: var(--school-primary-strong);
+  --green: var(--school-primary);
+  --cream: var(--school-secondary-soft);
+  --yellow: var(--school-secondary);
+  --ink: var(--school-text);
+  --line: var(--school-border);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--school-surface);
+  color: var(--school-text);
+  font-family: var(--font-poppins), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--school-secondary-soft);
+  color: var(--school-primary-strong);
+}
+
+:focus-visible {
+  outline: 3px solid var(--school-focus);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+button:disabled,
+a[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.sans-serif {
+  font-family: var(--font-poppins), Arial, sans-serif;
+}
+
+.eyebrow {
+  color: var(--school-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.container {
+  width: min(1160px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: clamp(40px, 5vw, 60px) 0;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Primary */
+
+.btn-primary {
+  background: var(--school-primary);
+  color: var(--school-surface);
+}
+
+.btn-primary:hover {
+  background: var(--school-primary-strong);
+  color: var(--school-surface);
+}
+
+/* Secondary */
+
+.btn-secondary {
+  background: var(--school-secondary);
+  color: var(--school-surface);
+}
+
+.btn-secondary:hover {
+  background: var(--school-secondary);
+  color: var(--school-surface);
+}
+
+/* Light */
+
+.btn-light {
+  background: var(--school-surface);
+  color: var(--school-primary-strong);
+  border-color: var(--school-surface);
+}
+
+.btn-light:hover {
+  background: transparent;
+  color: var(--school-surface);
+}
+
+/* Outline */
+
+.btn-outline {
+  border-color: var(--school-primary);
+  background: transparent;
+  color: var(--school-primary);
+}
+
+.btn-outline:hover {
+  background: var(--school-primary);
+  color: var(--school-surface);
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+  border: 1px solid var(--school-border);
+  background: var(--school-surface);
+}
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--school-surface-muted);
+}
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 32px, 1160px);
+  }
+
+  .section {
+    padding: 32px 0;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
