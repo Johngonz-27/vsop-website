@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { aboutContent } from "../../data/content";
 
@@ -10,6 +10,10 @@ export default function AboutPage() {
   const [active, setActive] = useState("overview");
 
   const { navigation, hero, sections } = aboutContent;
+
+  /* =========================================================
+     ACTIVE SECTION
+  ========================================================= */
 
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
@@ -52,6 +56,10 @@ export default function AboutPage() {
     };
   }, [navigation]);
 
+  /* =========================================================
+     SECTION NAVIGATION
+  ========================================================= */
+
   const goToSection = (id: string) => {
     setActive(id);
 
@@ -68,13 +76,16 @@ export default function AboutPage() {
   };
 
   return (
-    <main className="bg-white text-[#0d0d0d]">
+    <main className="min-w-0 bg-white text-[#0d0d0d]">
       {/* =========================================================
-          HERO
+          OVERVIEW / HERO
       ========================================================= */}
 
-      <section id="overview" className="scroll-mt-28 border-b border-black/10">
-        <div className="mx-auto flex min-h-[58vh] w-full max-w-[1200px] flex-col justify-between px-8 py-28 sm:px-10 sm:py-32 lg:px-12 lg:py-36">
+      <section
+        id="overview"
+        className="scroll-mt-24 border-b border-black/10 lg:scroll-mt-28"
+      >
+        <div className="mx-auto flex min-h-[58vh] w-full max-w-7xl flex-col justify-between px-5 py-20 sm:px-8 sm:py-24 md:px-10 md:py-28 lg:px-12 lg:py-36">
           <div>
             <Link
               href={hero.backHref}
@@ -84,37 +95,33 @@ export default function AboutPage() {
               {hero.backLabel}
             </Link>
 
-            <div className="mt-16 max-w-5xl md:mt-24">
-              <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-black/45">
+            <div className="mt-12 max-w-5xl sm:mt-16 md:mt-20 lg:mt-24">
+              <p className="mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-black/45 sm:mb-6 sm:text-[11px]">
                 {hero.eyebrow}
               </p>
 
-              <h1 className="font-display text-[clamp(3.5rem,8vw,8rem)] font-medium leading-[0.88] tracking-[-0.055em]">
+              <h1 className="max-w-4xl font-display text-[34px] font-medium leading-[0.92] tracking-[-0.055em] sm:text-[42px] md:text-[55px]">
                 {hero.title}
-                <br />
-                <span className="text-black/45">{hero.titleAccent}</span>
               </h1>
 
-              <p className="mt-10 max-w-2xl text-lg leading-8 text-black/55 md:text-xl">
+              <p className="mt-7 max-w-2xl text-[15px] leading-7 text-black/55 sm:mt-8 sm:text-[16px] md:mt-10 md:text-[18px] md:leading-8">
                 {hero.description}
               </p>
             </div>
           </div>
 
-          {/* Hero metadata */}
-          <div className="mt-20 grid border-t border-black/10 pt-6 sm:grid-cols-2 md:grid-cols-4">
-            {hero.metadata.map((item, index) => (
-              <div
-                key={item.label}
-                className={`mt-6 sm:mt-6 md:mt-0 ${
-                  index === 0 ? "sm:first:mt-0" : ""
-                }`}
-              >
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-black/35">
+          {/* =====================================================
+              HERO METADATA
+          ===================================================== */}
+
+          <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-7 pt-6 sm:mt-16 sm:grid-cols-2 md:mt-20 md:grid-cols-4 md:gap-y-0">
+            {hero.metadata.map((item) => (
+              <div key={item.label}>
+                <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-black/35 sm:text-[10px]">
                   {item.label}
                 </p>
 
-                <p className="mt-2 text-sm font-medium leading-6">
+                <p className="mt-1.5 text-[13px] font-medium leading-5 sm:mt-2 sm:text-sm sm:leading-6">
                   {item.value}
                 </p>
               </div>
@@ -127,33 +134,49 @@ export default function AboutPage() {
           CONTENT
       ========================================================= */}
 
-      <div className="mx-auto w-full max-w-[1200px] px-8 py-20 sm:px-10 md:px-12 md:py-28">
-        <div className="grid gap-16 lg:grid-cols-[220px_1fr] lg:gap-24">
+      <div className="mx-auto w-full max-w-7xl px-5 py-12 sm:px-8 sm:py-16 md:px-10 md:py-20 lg:px-12 lg:py-28">
+        <div className="grid gap-10 lg:grid-cols-[220px_1fr] lg:gap-24">
           {/* =====================================================
-              SIDEBAR
+              ON THIS PAGE
+              
+              Hidden on mobile/tablet.
+              Visible + sticky on desktop.
           ===================================================== */}
 
-          <aside className="lg:sticky lg:top-32 lg:h-fit">
-            <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-black/45">
+          <aside className="hidden lg:sticky lg:top-32 lg:block lg:h-fit">
+            <p className="mb-4 px-0.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-black/45">
               On this page
             </p>
 
-            <nav className="flex gap-1 overflow-x-auto pb-2 lg:block lg:overflow-visible">
+            <nav>
               {navigation.map((section) => (
                 <button
                   key={section.id}
                   type="button"
                   onClick={() => goToSection(section.id)}
-                  className={`group flex shrink-0 items-center gap-2 border-l px-3 py-2 text-left text-[12px] transition-all lg:w-full ${
-                    active === section.id
-                      ? "border-black font-semibold text-black"
-                      : "border-black/10 text-black/40 hover:border-black/30 hover:text-black"
-                  }`}
+                  className={`
+                    group
+                    flex
+                    w-full
+                    items-center
+                    gap-2
+                    border-l
+                    px-3
+                    py-2
+                    text-left
+                    text-[12px]
+                    transition-all
+                    ${
+                      active === section.id
+                        ? "border-black font-semibold text-black"
+                        : "border-black/10 text-black/40 hover:border-black/30 hover:text-black"
+                    }
+                  `}
                 >
                   <span>{section.label}</span>
 
                   {active === section.id && (
-                    <ArrowUpRight
+                    <ArrowRight
                       size={12}
                       strokeWidth={1.8}
                       className="shrink-0"
@@ -168,29 +191,38 @@ export default function AboutPage() {
               MAIN CONTENT
           ===================================================== */}
 
-          <div className="min-w-0 max-w-4xl">
+          <div className="min-w-0 max-w-4xl space-y-6 sm:space-y-8">
             {/* ===================================================
-                01 — HISTORY
+                HISTORY
             =================================================== */}
 
             <AboutSection
               id={sections.history.id}
-              number={sections.history.number}
               eyebrow={sections.history.eyebrow}
               title={sections.history.title}
               description={sections.history.description}
             >
-              <div className="border-t border-black/10">
+              <div className="relative mb-8 aspect-[16/9] w-full overflow-hidden bg-[var(--school-surface-muted)] sm:mb-12 sm:aspect-[16/7]">
+                <Image
+                  src="/Images/image2.jpg"
+                  alt="Village School of Parkwoods"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 900px"
+                  className="object-cover"
+                />
+              </div>
+
+              <div>
                 {sections.history.items.map((item) => (
                   <div
                     key={item.title}
-                    className="grid gap-5 border-b border-black/10 py-10 sm:grid-cols-[220px_1fr] sm:gap-10"
+                    className="grid gap-3 border-b border-black/5 py-6 last:border-b-0 sm:grid-cols-[220px_1fr] sm:gap-5 sm:gap-x-10 sm:py-8"
                   >
-                    <h3 className="font-display text-2xl font-medium leading-tight tracking-[-0.025em]">
+                    <h3 className="font-display text-xl font-medium leading-tight tracking-[-0.025em] sm:text-2xl">
                       {item.title}
                     </h3>
 
-                    <p className="max-w-2xl text-[15px] leading-7 text-black/60">
+                    <p className="max-w-2xl text-[14px] leading-6 text-black/60 sm:text-[15px] sm:leading-7">
                       {item.text}
                     </p>
                   </div>
@@ -199,115 +231,118 @@ export default function AboutPage() {
             </AboutSection>
 
             {/* ===================================================
-                02 — MISSION / VISION
+                MISSION / VISION / CORE VALUES
             =================================================== */}
 
             <AboutSection
               id={sections.missionVision.id}
-              number={sections.missionVision.number}
               eyebrow={sections.missionVision.eyebrow}
               title={sections.missionVision.title}
               description={sections.missionVision.description}
             >
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40">
-                  {sections.missionVision.vision.eyebrow}
-                </p>
+                {/* VISION */}
 
-                <h3 className="mt-4 max-w-3xl font-display text-3xl font-medium leading-tight tracking-[-0.035em] sm:text-4xl">
-                  {sections.missionVision.vision.title}
-                </h3>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40">
+                    {sections.missionVision.vision.eyebrow}
+                  </p>
 
-                <div className="mt-14 border-t border-black/10 pt-10">
+                  <p className="mt-4 max-w-3xl text-[15px] leading-7 text-black/65 sm:mt-5 sm:text-[17px] sm:leading-8">
+                    {sections.missionVision.vision.title}
+                  </p>
+                </div>
+
+                {/* MISSION */}
+
+                <div className="mt-10 border-t border-black/10 pt-8 sm:mt-14 sm:pt-10">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40">
                     {sections.missionVision.mission.eyebrow}
                   </p>
 
-                  <p className="mt-5 max-w-3xl text-[17px] leading-8 text-black/65">
+                  <p className="mt-4 max-w-3xl text-[15px] leading-7 text-black/65 sm:mt-5 sm:text-[17px] sm:leading-8">
                     {sections.missionVision.mission.description}
                   </p>
                 </div>
 
-                <div className="mt-14 border-t border-black/10 pt-10">
+                {/* CORE VALUES */}
+
+                <div className="mt-10 border-t border-black/10 pt-8 sm:mt-14 sm:pt-10">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40">
                     {sections.missionVision.values.eyebrow}
                   </p>
 
-                  <div className="mt-8 grid gap-px border border-black/10 bg-black/10 sm:grid-cols-3">
-                    {sections.missionVision.values.items.map((value) => (
-                      <div
-                        key={value}
-                        className="bg-white p-7 transition-colors hover:bg-black/[0.025]"
-                      >
-                        <h3 className="font-display text-2xl font-medium tracking-[-0.025em]">
-                          {value}
-                        </h3>
-                      </div>
-                    ))}
-                  </div>
+                  <p className="mt-4 max-w-3xl text-[15px] leading-7 text-black/65 sm:mt-5 sm:text-[17px] sm:leading-8">
+                    {sections.missionVision.values.description}
+                  </p>
                 </div>
               </div>
             </AboutSection>
 
             {/* ===================================================
-                03 — ADMINISTRATION
+                ADMINISTRATION
             =================================================== */}
 
             <AboutSection
               id={sections.administration.id}
-              number={sections.administration.number}
               eyebrow={sections.administration.eyebrow}
               title={sections.administration.title}
               description={sections.administration.description}
             >
-              <div className="border-t border-black/10">
-                {sections.administration.people.map((person, index) => (
-                  <div
-                    key={person.name}
-                    className="grid gap-4 border-b border-black/10 py-8 sm:grid-cols-[70px_1fr_180px] sm:items-center"
-                  >
-                    <span className="text-xs text-black/35">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+              <div className="grid gap-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+                {sections.administration.people.map((person) => (
+                  <div key={person.name}>
+                    <div className="relative aspect-[4/3] overflow-hidden bg-[var(--school-surface-muted)]">
+                      <Image
+                        src={person.image}
+                        alt={person.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover"
+                      />
+                    </div>
 
-                    <h3 className="font-display text-2xl font-medium tracking-[-0.025em]">
-                      {person.name}
-                    </h3>
+                    <div className="mt-3 sm:mt-4">
+                      <h3 className="font-display text-lg font-medium leading-tight tracking-[-0.025em] sm:text-xl">
+                        {person.name}
+                      </h3>
 
-                    <p className="text-sm text-black/50">{person.role}</p>
+                      <p className="mt-1.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-black/40 sm:text-[10px]">
+                        {person.role}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
             </AboutSection>
 
             {/* ===================================================
-                04 — SCHOOL SEAL
+                SCHOOL SEAL
             =================================================== */}
 
             <AboutSection
               id={sections.schoolSeal.id}
-              number={sections.schoolSeal.number}
               eyebrow={sections.schoolSeal.eyebrow}
               title={sections.schoolSeal.title}
               description={sections.schoolSeal.description}
             >
-              <div className="grid gap-12 md:grid-cols-[280px_1fr] md:items-start">
-                <div className="flex aspect-square items-center justify-center border border-black/10 bg-black/[0.02] p-10">
+              <div className="grid gap-6 sm:grid-cols-[220px_1fr] sm:items-center sm:gap-10">
+                <div className="flex aspect-square items-center justify-center p-4 sm:p-7">
                   <Image
-                    src={sections.schoolSeal.image}
-                    alt={sections.schoolSeal.imageAlt}
-                    width={220}
-                    height={220}
-                    className="h-auto w-full object-contain"
+                    src="/Images/vsop-seal.png"
+                    alt="Village School of Parkwoods School Seal"
+                    width={180}
+                    height={180}
+                    className="h-auto w-full max-w-[140px] object-contain sm:max-w-[160px]"
                   />
                 </div>
 
-                <div>
-                  <h3 className="font-display text-3xl font-medium leading-tight tracking-[-0.035em] sm:text-4xl">
+                <div className="max-w-2xl">
+                  <h3 className="text-xl font-semibold leading-tight tracking-[-0.025em] sm:text-3xl">
                     {sections.schoolSeal.heading}
                   </h3>
 
-                  <p className="mt-6 text-[15px] leading-7 text-black/60">
+                  <p className="mt-3 text-[14px] leading-6 text-black/60 sm:mt-4 sm:text-[15px] sm:leading-7">
                     {sections.schoolSeal.text}
                   </p>
                 </div>
@@ -315,89 +350,43 @@ export default function AboutPage() {
             </AboutSection>
 
             {/* ===================================================
-                05 — RECOGNITIONS
+                SCHOOL HYMN
             =================================================== */}
 
             <AboutSection
-              id={sections.recognitions.id}
-              number={sections.recognitions.number}
-              eyebrow={sections.recognitions.eyebrow}
-              title={sections.recognitions.title}
-              description={sections.recognitions.description}
+              id={sections.hymn.id}
+              eyebrow={sections.hymn.eyebrow}
+              title={sections.hymn.title}
+              description={sections.hymn.description}
             >
-              <div>
-                <h3 className="font-display text-3xl font-medium tracking-[-0.035em] sm:text-4xl">
-                  {sections.recognitions.heading}
-                </h3>
+              <div className="mx-auto max-w-2xl text-center">
+                <div className="py-8 sm:py-12">
+                  <p className="font-display text-2xl font-medium leading-tight tracking-[-0.035em] sm:text-4xl">
+                    {sections.hymn.schoolName}
+                  </p>
 
-                <p className="mt-6 max-w-2xl text-[15px] leading-7 text-black/60">
-                  {sections.recognitions.text}
-                </p>
+                  <p className="mt-3 text-[9px] font-semibold uppercase tracking-[0.18em] text-black/40 sm:text-[10px]">
+                    {sections.hymn.label}
+                  </p>
+                </div>
 
-                <div className="mt-12 grid gap-px border border-black/10 bg-black/10 sm:grid-cols-2">
-                  {sections.recognitions.items.map((item) => (
-                    <div
-                      key={item}
-                      className="bg-white p-7 transition-colors hover:bg-black/[0.025]"
-                    >
-                      <h3 className="font-display text-2xl font-medium tracking-[-0.025em]">
-                        {item}
-                      </h3>
-                    </div>
-                  ))}
+                <div className="mt-8 whitespace-pre-line text-[14px] leading-7 text-black/65 sm:mt-10 sm:text-[15px] sm:leading-8">
+                  {sections.hymn.lyrics}
                 </div>
               </div>
             </AboutSection>
 
             {/* ===================================================
-                06 — ACCREDITATIONS
-            =================================================== */}
-
-            <AboutSection
-              id={sections.accreditations.id}
-              number={sections.accreditations.number}
-              eyebrow={sections.accreditations.eyebrow}
-              title={sections.accreditations.title}
-              description={sections.accreditations.description}
-            >
-              <div>
-                <p className="max-w-2xl text-[17px] leading-8 text-black/60">
-                  {sections.accreditations.text}
-                </p>
-
-                <div className="mt-12 border-t border-black/10">
-                  {sections.accreditations.organizations.map(
-                    (organization, index) => (
-                      <div
-                        key={organization}
-                        className="flex items-center gap-5 border-b border-black/10 py-7"
-                      >
-                        <span className="text-xs text-black/35">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-
-                        <span className="font-display text-xl font-medium tracking-[-0.02em]">
-                          {organization}
-                        </span>
-                      </div>
-                    ),
-                  )}
-                </div>
-              </div>
-            </AboutSection>
-
-            {/* ===================================================
-                07 — FACILITIES
+                FACILITIES
             =================================================== */}
 
             <AboutSection
               id={sections.facilities.id}
-              number={sections.facilities.number}
               eyebrow={sections.facilities.eyebrow}
               title={sections.facilities.title}
               description={sections.facilities.description}
             >
-              <div className="grid gap-10 sm:grid-cols-2">
+              <div className="grid gap-8 sm:grid-cols-2 sm:gap-10">
                 {sections.facilities.items.map((item) => (
                   <div key={item.title}>
                     <div className="relative aspect-[4/3] overflow-hidden bg-black/[0.03]">
@@ -409,7 +398,7 @@ export default function AboutPage() {
                       />
                     </div>
 
-                    <h3 className="mt-5 font-display text-2xl font-medium tracking-[-0.025em]">
+                    <h3 className="mt-4 font-display text-xl font-medium tracking-[-0.025em] sm:mt-5 sm:text-2xl">
                       {item.title}
                     </h3>
                   </div>
@@ -418,90 +407,71 @@ export default function AboutPage() {
             </AboutSection>
 
             {/* ===================================================
-                08 — LINKAGES
+                RECOGNITIONS
             =================================================== */}
 
             <AboutSection
-              id={sections.linkages.id}
-              number={sections.linkages.number}
-              eyebrow={sections.linkages.eyebrow}
-              title={sections.linkages.title}
-              description={sections.linkages.description}
+              id={sections.recognitions.id}
+              eyebrow={sections.recognitions.eyebrow}
+              title={sections.recognitions.title}
+              description={sections.recognitions.description}
             >
-              <div className="border-t border-black/10">
-                {sections.linkages.organizations.map((organization, index) => (
-                  <div
-                    key={organization}
-                    className="grid gap-4 border-b border-black/10 py-8 sm:grid-cols-[70px_1fr]"
-                  >
-                    <span className="text-xs font-semibold tracking-[0.14em] text-black/35">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+              <div className="grid gap-0 sm:grid-cols-2">
+                {sections.recognitions.items.map((item, index) => (
+                  <div key={item} className="py-4 sm:py-6">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <span className="shrink-0 text-[9px] font-semibold tracking-[0.12em] text-black/30 sm:text-[10px]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
 
-                    <h3 className="font-display text-2xl font-medium tracking-[-0.025em] sm:text-3xl">
-                      {organization}
-                    </h3>
+                      <p className="text-[14px] font-medium leading-6 text-black/75 sm:text-[15px]">
+                        {item}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
             </AboutSection>
 
             {/* ===================================================
-                09 — HYMN
-            =================================================== */}
-
-            <AboutSection
-              id={sections.hymn.id}
-              number={sections.hymn.number}
-              eyebrow={sections.hymn.eyebrow}
-              title={sections.hymn.title}
-              description={sections.hymn.description}
-            >
-              <div className="max-w-2xl">
-                <div className="border-y border-black/10 py-12 text-center">
-                  <p className="font-display text-3xl font-medium leading-tight tracking-[-0.035em] sm:text-4xl">
-                    {sections.hymn.schoolName}
-                  </p>
-
-                  <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40">
-                    {sections.hymn.label}
-                  </p>
-                </div>
-
-                <div className="mt-10 whitespace-pre-line text-center text-[15px] leading-8 text-black/65">
-                  {sections.hymn.lyrics}
-                </div>
-              </div>
-            </AboutSection>
-
-            {/* ===================================================
-                10 — WHY JOIN VSOP
+                WHY JOIN VSOP
             =================================================== */}
 
             <AboutSection
               id={sections.whyJoin.id}
-              number={sections.whyJoin.number}
               eyebrow={sections.whyJoin.eyebrow}
               title={sections.whyJoin.title}
               description={sections.whyJoin.description}
             >
-              <div className="border-t border-black/10">
+              <div>
                 {sections.whyJoin.items.map((item, index) => (
                   <div
                     key={item.title}
-                    className="grid gap-5 border-b border-black/10 py-8 sm:grid-cols-[70px_1fr_1fr] sm:items-start sm:gap-8"
+                    className="grid gap-4 border-b border-black/5 py-6 last:border-b-0 sm:grid-cols-[180px_1fr] sm:items-center sm:gap-8 sm:py-6"
                   >
-                    <span className="text-xs font-semibold tracking-[0.14em] text-black/35">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
+                    {/* IMAGE */}
 
-                    <h3 className="font-display text-2xl font-medium tracking-[-0.025em] sm:text-3xl">
-                      {item.title}
-                    </h3>
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-[var(--school-surface-muted)]">
+                      <Image
+                        src={`/Images/image${index + 1}.jpg`}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 180px"
+                        className="object-cover"
+                      />
+                    </div>
 
-                    <p className="text-sm leading-7 text-black/55">
-                      {item.text}
-                    </p>
+                    {/* CONTENT */}
+
+                    <div>
+                      <h3 className="font-display text-lg font-medium leading-tight tracking-[-0.025em] sm:text-2xl">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-2 max-w-xl text-[13px] leading-6 text-black/60 sm:text-[14px]">
+                        {item.text}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -515,18 +485,16 @@ export default function AboutPage() {
 
 /* ===============================================================
    ABOUT SECTION
-================================================================ */
+=============================================================== */
 
 function AboutSection({
   id,
-  number,
   eyebrow,
   title,
   description,
   children,
 }: {
   id: string;
-  number: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -535,29 +503,38 @@ function AboutSection({
   return (
     <section
       id={id}
-      className="scroll-mt-28 border-b border-black/10 py-14 sm:py-16 md:py-20"
+      className="
+        scroll-mt-24
+        border
+        border-black/10
+        bg-white
+        px-5
+        py-8
+        shadow-[0_8px_30px_rgba(0,0,0,0.06)]
+        sm:scroll-mt-28
+        sm:px-7
+        sm:py-10
+        md:px-9
+        md:py-12
+        lg:px-12
+        lg:py-14
+      "
     >
-      <div className="grid gap-5 md:grid-cols-[70px_1fr] md:gap-8">
-        <span className="text-xs font-semibold tracking-[0.14em] text-black/30">
-          {number}
-        </span>
+      <div>
+        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-black/40 sm:text-[10px]">
+          {eyebrow}
+        </p>
 
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-black/40">
-            {eyebrow}
-          </p>
+        <h2 className="mt-2 max-w-4xl font-display text-[30px] font-medium leading-[0.98] tracking-[-0.045em] sm:mt-3 sm:text-4xl md:text-5xl lg:text-6xl">
+          {title}
+        </h2>
 
-          <h2 className="mt-3 max-w-4xl font-display text-4xl font-medium leading-[0.98] tracking-[-0.045em] sm:text-5xl md:text-6xl">
-            {title}
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-[15px] leading-7 text-black/55">
-            {description}
-          </p>
-        </div>
+        <p className="mt-4 max-w-2xl text-[14px] leading-6 text-black/55 sm:mt-6 sm:text-[15px] sm:leading-7">
+          {description}
+        </p>
       </div>
 
-      <div className="mt-12 md:pl-[102px]">{children}</div>
+      <div className="mt-8 sm:mt-10 md:mt-12">{children}</div>
     </section>
   );
 }

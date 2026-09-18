@@ -14,10 +14,10 @@
 
   /* Surface Colors */
   --school-surface: #ffffff;
-  --school-surface-muted: #f7f8f6;
+  --school-surface-muted: #f7f7f7;
 
   /* Text Colors */
-  --school-text: #0d0d0d;
+  --school-text: #342e2e;
   --school-text-muted: #5d6963;
 
   /* Border */
@@ -127,85 +127,6 @@ a[aria-disabled="true"] {
 }
 
 /* =========================================================
-   BUTTONS
-========================================================= */
-
-.btn {
-  display: inline-flex;
-  width: fit-content;
-  min-height: 48px;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 0 24px;
-  border: 1px solid transparent;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-/* Primary */
-
-.btn-primary {
-  background: var(--school-primary);
-  color: var(--school-surface);
-}
-
-.btn-primary:hover {
-  background: var(--school-primary-strong);
-  color: var(--school-surface);
-}
-
-/* Secondary */
-
-.btn-secondary {
-  background: var(--school-secondary);
-  color: var(--school-surface);
-}
-
-.btn-secondary:hover {
-  background: var(--school-secondary);
-  color: var(--school-surface);
-}
-
-/* Light */
-
-.btn-light {
-  background: var(--school-surface);
-  color: var(--school-primary-strong);
-  border-color: var(--school-surface);
-}
-
-.btn-light:hover {
-  background: transparent;
-  color: var(--school-surface);
-}
-
-/* Outline */
-
-.btn-outline {
-  border-color: var(--school-primary);
-  background: transparent;
-  color: var(--school-primary);
-}
-
-.btn-outline:hover {
-  background: var(--school-primary);
-  color: var(--school-surface);
-}
-
-/* =========================================================
    CARDS
 ========================================================= */
 
@@ -250,10 +171,6 @@ a[aria-disabled="true"] {
   .section {
     padding: 32px 0;
   }
-
-  .btn {
-    width: 100%;
-  }
 }
 
 /* =========================================================
@@ -273,3 +190,53 @@ a[aria-disabled="true"] {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* -------------------------------------------------------
+   VSOP — Global Layout Consistency
+   Shared spacing, container width, and typography rhythm.
+   ------------------------------------------------------- */
+
+:root {
+  --vsop-container: 80rem;
+  --vsop-gutter: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vsop-gutter: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --vsop-gutter: 2.5rem;
+  }
+}
+
+.vsop-container {
+  width: min(100% - (var(--vsop-gutter) * 2), var(--vsop-container));
+  margin-inline: auto;
+}
+
+.vsop-section {
+  padding-block: clamp(5rem, 9vw, 9rem);
+}
+
+.vsop-section-tight {
+  padding-block: clamp(3.5rem, 6vw, 6rem);
+}
+
+.vsop-page-title {
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.vsop-section-title {
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.vsop-body {
+  line-height: 1.7;
+}
+

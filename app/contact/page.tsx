@@ -1,3 +1,129 @@
-import { Button } from "@/components/Button";
-import Layout from '../../components/Layout';import {PageHero} from '../../components/Site';import {Mail,Phone,MapPin} from 'lucide-react';
-export default function Contact(){return <Layout><PageHero label="Contact" title="We’d love to hear from your family." desc="Use this demo contact page for inquiries, campus visits, admissions questions, partnerships, or general school information."/><section className="section"><div className="container grid gap-14 lg:grid-cols-[.8fr_1.2fr]"><div className="space-y-7"><div><div className="eyebrow">Visit</div><p className="mt-3 flex gap-3 text-lg"><MapPin size={20}/> Parkwoods, Philippines</p></div><div><div className="eyebrow">Call</div><p className="mt-3 flex gap-3 text-lg"><Phone size={20}/> +63 900 000 0000</p></div><div><div className="eyebrow">Email</div><p className="mt-3 flex gap-3 text-lg"><Mail size={20}/> hello@village-school.example</p></div></div><form className="rounded-[28px] border border-black/10 p-7 md:p-10"><div className="grid gap-5 md:grid-cols-2"><label className="text-sm font-semibold">Parent / Guardian name<input className="mt-2 w-full rounded-xl border border-black/10 p-3 font-normal outline-none" placeholder="Your name"/></label><label className="text-sm font-semibold">Email<input className="mt-2 w-full rounded-xl border border-black/10 p-3 font-normal outline-none" placeholder="you@example.com"/></label></div><label className="mt-5 block text-sm font-semibold">Subject<input className="mt-2 w-full rounded-xl border border-black/10 p-3 font-normal outline-none" placeholder="How can we help?"/></label><label className="mt-5 block text-sm font-semibold">Message<textarea className="mt-2 min-h-40 w-full rounded-xl border border-black/10 p-3 font-normal outline-none" placeholder="Tell us a little about your inquiry..."/></label><Button type="submit" variant="primary" size="md" className="mt-6">Send inquiry</Button><p className="mt-4 text-xs text-black/45">Demo form only — connect this to your preferred email/form service for production.</p></form></div></section></Layout>}
+import Layout from "../../components/Layout";
+import { PageHero } from "../../components/Site";
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { contactContent } from "../../data/content";
+
+export default function Contact() {
+  const { hero, contactInformation, form } = contactContent;
+
+  const contactIcons = {
+    location: MapPin,
+    phone: Phone,
+    email: Mail,
+  };
+
+  return (
+    <Layout>
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <PageHero label={hero.label} title={hero.title} desc={hero.description} />
+
+      {/* =====================================================
+          CONTACT
+      ===================================================== */}
+
+      <section className="section">
+        <div className="container grid gap-14 lg:grid-cols-[0.8fr_1.2fr]">
+          {/* =================================================
+              CONTACT INFORMATION
+          ================================================= */}
+
+          <div className="space-y-10">
+            {contactInformation.map((item) => {
+              const Icon = contactIcons[item.type as keyof typeof contactIcons];
+
+              return (
+                <div key={item.type}>
+                  <div className="eyebrow">{item.label}</div>
+
+                  <p className="mt-3 flex items-center gap-3 text-lg">
+                    <Icon
+                      size={20}
+                      strokeWidth={1.7}
+                      className="shrink-0 text-[var(--darkgreen)]"
+                    />
+                    {item.value}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* =================================================
+              CONTACT FORM
+          ================================================= */}
+
+          <form className="border border-black/10 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.06)] md:p-10">
+            <div className="grid gap-5 md:grid-cols-2">
+              {/* NAME */}
+
+              <label className="text-sm font-semibold">
+                {form.fields.name.label}
+
+                <input
+                  type={form.fields.name.type}
+                  name={form.fields.name.name}
+                  placeholder={form.fields.name.placeholder}
+                  className="mt-2 w-full border border-black/10 bg-white p-3 font-normal outline-none transition-colors focus:border-[var(--darkgreen)]"
+                />
+              </label>
+
+              {/* EMAIL */}
+
+              <label className="text-sm font-semibold">
+                {form.fields.email.label}
+
+                <input
+                  type={form.fields.email.type}
+                  name={form.fields.email.name}
+                  placeholder={form.fields.email.placeholder}
+                  className="mt-2 w-full border border-black/10 bg-white p-3 font-normal outline-none transition-colors focus:border-[var(--darkgreen)]"
+                />
+              </label>
+            </div>
+
+            {/* SUBJECT */}
+
+            <label className="mt-5 block text-sm font-semibold">
+              {form.fields.subject.label}
+
+              <input
+                type={form.fields.subject.type}
+                name={form.fields.subject.name}
+                placeholder={form.fields.subject.placeholder}
+                className="mt-2 w-full border border-black/10 bg-white p-3 font-normal outline-none transition-colors focus:border-[var(--darkgreen)]"
+              />
+            </label>
+
+            {/* MESSAGE */}
+
+            <label className="mt-5 block text-sm font-semibold">
+              {form.fields.message.label}
+
+              <textarea
+                name={form.fields.message.name}
+                placeholder={form.fields.message.placeholder}
+                className="mt-2 min-h-40 w-full resize-y border border-black/10 bg-white p-3 font-normal outline-none transition-colors focus:border-[var(--darkgreen)]"
+              />
+            </label>
+
+            {/* SUBMIT */}
+
+            <button
+              type="submit"
+              className="mt-6 inline-flex items-center gap-3 bg-[var(--darkgreen)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--green)]"
+            >
+              {form.submitLabel}
+
+              <ArrowRight size={16} strokeWidth={1.7} />
+            </button>
+
+            <p className="mt-4 text-xs leading-5 text-black/45">{form.note}</p>
+          </form>
+        </div>
+      </section>
+    </Layout>
+  );
+}
