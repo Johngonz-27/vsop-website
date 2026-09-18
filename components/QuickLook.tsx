@@ -4,12 +4,12 @@ import { quickLookContent } from "@/data/content";
 
 export function QuickLook() {
   return (
-    <section className="bg-[var(--school-surface)] py-14 sm:py-16 lg:py-20">
+    <section className="bg-[var(--school-surface-muted)] py-8 sm:py-10 lg:py-12">
       <div className="container">
         {/* =====================================================
             HEADER
         ===================================================== */}
-        <div className="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end lg:mb-10">
+        <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end lg:mb-8">
           <div className="w-full text-center">
             <h2 className="sans-serif mt-2 text-[28px] font-extrabold leading-tight tracking-[-0.03em] text-[var(--school-primary)] md:text-[40px]">
               {quickLookContent.heading}
@@ -42,9 +42,7 @@ export function QuickLook() {
                 overflow-hidden
               `}
             >
-              {/* =================================================
-                  IMAGE
-              ================================================= */}
+              {/* IMAGE */}
               <Image
                 src={item.image}
                 alt={item.alt}
@@ -59,9 +57,7 @@ export function QuickLook() {
                 "
               />
 
-              {/* =================================================
-                  DEFAULT DARK OVERLAY
-              ================================================= */}
+              {/* DEFAULT DARK OVERLAY */}
               <div
                 className="
                   absolute
@@ -77,9 +73,7 @@ export function QuickLook() {
                 "
               />
 
-              {/* =================================================
-                  HOVER YELLOW / GOLD OVERLAY
-              ================================================= */}
+              {/* HOVER YELLOW / GOLD OVERLAY */}
               <div
                 className="
                   absolute
@@ -96,9 +90,7 @@ export function QuickLook() {
                 "
               />
 
-              {/* =================================================
-                  DEFAULT CONTENT
-              ================================================= */}
+              {/* DEFAULT CONTENT */}
               <div
                 className="
                   absolute
@@ -118,10 +110,7 @@ export function QuickLook() {
                 </h3>
               </div>
 
-              {/* =================================================
-                  HOVER CONTENT
-                  TITLE + DESCRIPTION + READ MORE
-              ================================================= */}
+              {/* HOVER CONTENT */}
               <div
                 className="
                   absolute

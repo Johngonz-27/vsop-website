@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 import { footerContent } from "@/data/content";
 
 export function Footer() {
@@ -33,12 +40,12 @@ export function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="container relative z-10 grid gap-12 py-16 md:grid-cols-4">
+        <div className="container relative z-10 grid gap-10 py-10 sm:py-12 md:grid-cols-4 md:gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="inline-block">
               <Image
-                src="/Images/vsop-horizontal-seal.png"
+                src="/Images/vsop-horizontal-white.png"
                 alt="Village School of Parkwoods"
                 width={180}
                 height={70}
@@ -46,11 +53,11 @@ export function Footer() {
               />
             </Link>
 
-            <h2 className="sans-serif mt-6 text-3xl font-medium">
+            <h2 className="sans-serif mt-5 text-3xl font-medium">
               {footerContent.brand.title}
             </h2>
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/65">
+            <p className="mt-4 max-w-xl text-sm leading-7 text-white/65">
               {footerContent.brand.description}
             </p>
           </div>
@@ -59,7 +66,7 @@ export function Footer() {
           <div>
             <b>Quick Links</b>
 
-            <div className="mt-5 grid gap-3 text-sm text-white/65">
+            <div className="mt-4 grid gap-3 text-sm text-white/65">
               {footerContent.navigation.links.map((link) => (
                 <Link
                   key={link.href}
@@ -76,7 +83,7 @@ export function Footer() {
           <div>
             <b>{footerContent.contact.heading}</b>
 
-            <div className="mt-5 grid gap-3 text-sm text-white/65">
+            <div className="mt-4 grid gap-3 text-sm text-white/65">
               <span className="flex gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
                 {footerContent.contact.address}
@@ -92,13 +99,38 @@ export function Footer() {
                 {footerContent.contact.email}
               </span>
             </div>
+
+            {/* Social Media */}
+            <div className="mt-6 flex items-center gap-3">
+              <Link
+                href="https://www.facebook.com/villageschoolofparkwoods"
+                aria-label="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/70 transition hover:border-white hover:bg-white hover:text-[#035921]"
+              >
+                <Facebook size={17} strokeWidth={1.8} />
+              </Link>
+
+              <span
+                aria-label="Instagram — Coming soon"
+                className="flex h-9 w-9 cursor-default items-center justify-center rounded-full border border-white/20 text-white/30"
+              >
+                <Instagram size={17} strokeWidth={1.8} />
+              </span>
+
+              <span
+                aria-label="LinkedIn — Coming soon"
+                className="flex h-9 w-9 cursor-default items-center justify-center rounded-full border border-white/20 text-white/30"
+              >
+                <Linkedin size={17} strokeWidth={1.8} />
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="bg-[#d9b504]">
-        <div className="container flex flex-col justify-between gap-3 py-5 text-xs text-white md:flex-row">
+        <div className="container flex flex-col justify-between gap-3 py-4 text-xs text-white md:flex-row">
           <span>{footerContent.bottom.copyright}</span>
 
           <div className="flex gap-2">

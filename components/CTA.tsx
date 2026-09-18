@@ -1,79 +1,41 @@
-import { Button } from "./Button";
-import { ctaContent } from "@/data/content";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ctaContent } from "../data/content";
 
 export function CTA() {
   return (
-    <section className="bg-[#062b20] px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
-      <div className="mx-auto w-full max-w-[1160px]">
-        <div
-          className="
-            bg-[#062b20]
-            px-6
-            py-12
-            text-white
-            sm:px-10
-            sm:py-14
-            lg:px-16
-            lg:py-16
-          "
-        >
-          <div
-            className="
-              flex
-              flex-col
-              gap-8
-              lg:flex-row
-              lg:items-center
-              lg:justify-between
-              lg:gap-16
-            "
-          >
-            {/* TEXT */}
-            <div className="max-w-2xl">
-              {/* EYEBROW */}
-              <div>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#d9b504]">
-                  {ctaContent.eyebrow}
-                </span>
-              </div>
+    <section className="px-4 py-5 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1160px]  bg-[var(--school-primary-strong)]">
+        <div className="flex flex-col gap-6 px-6 py-8 sm:px-8 sm:py-9 md:flex-row md:items-center md:justify-between lg:px-10">
+          {/* Content */}
+          <div className="max-w-[680px]">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--school-secondary)]">
+              {ctaContent.eyebrow}
+            </p>
 
-              {/* TITLE */}
-              <h2
-                className="sans-serif mt-4 font-extrabold leading-[1.15] tracking-[-0.03em]"
-                style={{ fontSize: "clamp(35px, 5vw, 55px)" }}
-              >
-                {ctaContent.title}
-              </h2>
+            <h2 className="text-[26px] font-semibold leading-[1.1] tracking-[-0.02em] text-[var(--school-surface)] sm:text-[30px]">
+              {ctaContent.title}
+            </h2>
 
-              {/* DESCRIPTION */}
-              {ctaContent.description && (
-                <p
-                  className="
-                    mt-5
-                    max-w-xl
-                    text-[16px]
-                    leading-7
-                    text-white/70
-                    md:text-[18px]
-                    md:leading-8
-                  "
-                >
-                  {ctaContent.description}
-                </p>
-              )}
-            </div>
-
-            {/* BUTTON */}
-            <div className="shrink-0 lg:flex lg:items-center">
-              <Button
-                href={ctaContent.button.href}
-                variant="secondary"
-                size="md"
-              >
-                {ctaContent.button.label}
-              </Button>
-            </div>
+            {ctaContent.description && (
+              <p className="mt-3 max-w-[600px] text-[13px] leading-6 text-[var(--school-surface-muted)] sm:text-[14px]">
+                {ctaContent.description}
+              </p>
+            )}
           </div>
+
+          {/* Button */}
+          <Link
+            href={ctaContent.button.href}
+            className="group inline-flex h-11 shrink-0 items-center justify-center gap-3 border border-[var(--school-surface)] bg-[var(--school-surface)] px-5 text-[12px] font-semibold text-white transition-colors duration-200 hover:bg-[var(--school-surface)]"
+          >
+            {ctaContent.button.label}
+            <ArrowRight
+              size={15}
+              strokeWidth={1.8}
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </Link>
         </div>
       </div>
     </section>

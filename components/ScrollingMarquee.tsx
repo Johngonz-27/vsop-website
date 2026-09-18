@@ -5,7 +5,7 @@ export function ScrollingMarquee() {
   const { organizations, heading, animationDuration } = scrollingMarqueeContent;
 
   return (
-    <section className="overflow-hidden bg-[var(--school-surface-muted)] py-10 sm:py-12">
+    <section className="overflow-hidden bg-[var(--school-surface)] py-10 sm:py-12">
       <div className="container mb-7">
         <h2 className="sans-serif text-center text-[20px] font-extrabold leading-tight tracking-[-0.03em] text-[var(--school-primary)] md:text-[24px]">
           {heading}
@@ -51,19 +51,21 @@ function LogoItem({
         width={200}
         height={90}
         className="
-          h-auto
-          max-h-16
-          w-auto
-          max-w-[160px]
-          object-contain
-          grayscale
-          opacity-55
-          transition-all
-          duration-500
-          ease-out
-          group-hover/logo:grayscale-0
-          group-hover/logo:opacity-100
-        "
+    h-auto
+    max-h-16
+    w-auto
+    max-w-[160px]
+    object-contain
+    opacity-100
+    grayscale-0
+    transition-all
+    duration-500
+    ease-out
+    sm:grayscale
+    sm:opacity-55
+    group-hover/logo:grayscale-0
+    group-hover/logo:opacity-100
+  "
       />
     </div>
   );

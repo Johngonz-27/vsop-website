@@ -1,5 +1,5 @@
 /* =========================================================
-   HEADER / NAVIGATION
+   GLOBAL — HEADER / NAVIGATION
 ========================================================= */
 
 export const headerContent = {
@@ -26,36 +26,28 @@ export const headerContent = {
         href: "/about#mission-vision",
       },
       {
-        label: "School Seal",
-        href: "/about#school-seal",
-      },
-      {
         label: "Administration",
         href: "/about#administration",
       },
       {
-        label: "Why Join VSOP",
-        href: "/about#why-join-vsop",
+        label: "School Seal",
+        href: "/about#school-seal",
       },
       {
-        label: "Recognitions",
-        href: "/about#recognitions",
-      },
-      {
-        label: "Accreditations",
-        href: "/about#accreditations",
+        label: "School Hymn",
+        href: "/about#hymn",
       },
       {
         label: "Facilities",
         href: "/about#facilities",
       },
       {
-        label: "Linkages",
-        href: "/about#linkages",
+        label: "Recognitions",
+        href: "/about#recognitions",
       },
       {
-        label: "Hymn",
-        href: "/about#hymn",
+        label: "Why Join VSOP",
+        href: "/about#why-join-vsop",
       },
     ],
   },
@@ -105,20 +97,20 @@ export const headerContent = {
 
     links: [
       {
-        label: "Enrolment Procedures",
-        href: "/admissions",
+        label: "Enrollment Procedures",
+        href: "/admissions#enrollment",
       },
       {
         label: "Requirements",
-        href: "/admissions/requirements",
+        href: "/admissions#requirements",
       },
       {
         label: "Tuition Fees",
-        href: "/admissions/tuition-fees",
+        href: "/admissions#tuition",
       },
       {
         label: "Financial Aid",
-        href: "/admissions/financial-aid",
+        href: "/admissions#financial-aid",
       },
     ],
   },
@@ -140,7 +132,7 @@ export const headerContent = {
 
   applyButton: {
     label: "Apply Now",
-    href: "/admissions",
+    href: "/admissions/apply-now",
   },
 };
 
@@ -311,6 +303,7 @@ export const quickLookContent = {
     },
   ],
 };
+
 /* =========================================================
    HOMEPAGE — CTA
 ========================================================= */
@@ -318,6 +311,7 @@ export const quickLookContent = {
 export const ctaContent = {
   description:
     "Placeholder content for the CTA section. Replace this text with the official call-to-action message for the school.",
+
   eyebrow: "Become Part of VSOP",
 
   title: "Your CTA Headline Goes Here.",
@@ -562,7 +556,7 @@ export const missionVisionContent = {
 };
 
 /* =========================================================
-   FOOTER
+   GLOBAL — FOOTER
 ========================================================= */
 
 export const footerContent = {
@@ -622,22 +616,33 @@ export const footerContent = {
 
     legal: [
       {
-        label: "Privacy Policy",
+        label: "Data Privacy Notice",
         href: "/privacy",
-      },
-      {
-        label: "Terms and Conditions",
-        href: "/terms",
       },
     ],
   },
 };
 
 /* =========================================================
-   ABOUT PAGE
+   ABOUT PAGE — OVERVIEW
 ========================================================= */
 
 export const aboutContent = {
+  /* =========================================================
+     ABOUT PAGE NAVIGATION
+     
+     FLOW:
+     Overview
+     → History
+     → Mission, Vision & Core Values
+     → Administration
+     → School Seal
+     → School Hymn
+     → Facilities
+     → Recognitions
+     → Why Join VSOP
+  ========================================================= */
+
   navigation: [
     {
       id: "overview",
@@ -665,14 +670,9 @@ export const aboutContent = {
       href: "/about#school-seal",
     },
     {
-      id: "recognitions",
-      label: "Recognitions",
-      href: "/about#recognitions",
-    },
-    {
-      id: "accreditations",
-      label: "Accreditations",
-      href: "/about#accreditations",
+      id: "hymn",
+      label: "School Hymn",
+      href: "/about#hymn",
     },
     {
       id: "facilities",
@@ -680,14 +680,9 @@ export const aboutContent = {
       href: "/about#facilities",
     },
     {
-      id: "linkages",
-      label: "Linkages",
-      href: "/about#linkages",
-    },
-    {
-      id: "hymn",
-      label: "Hymn",
-      href: "/about#hymn",
+      id: "recognitions",
+      label: "Recognitions",
+      href: "/about#recognitions",
     },
     {
       id: "why-join-vsop",
@@ -696,15 +691,17 @@ export const aboutContent = {
     },
   ],
 
+  /* =========================================================
+     ABOUT HERO / OVERVIEW
+  ========================================================= */
+
   hero: {
     eyebrow: "About the School",
 
-    title: "Our Story",
-
-    titleAccent: "& Community.",
+    title: "Placeholder Page Title",
 
     description:
-      "Discover the story, people, values, and community behind Village School of Parkwoods — a place where students are encouraged to learn, grow, and belong.",
+      "Placeholder content for the About the School page. Replace this with a brief introduction to the school's story, community, values, and educational approach.",
 
     backLabel: "Back to Home",
     backHref: "/",
@@ -712,233 +709,265 @@ export const aboutContent = {
     metadata: [
       {
         label: "School",
-        value: "Village School of Parkwoods",
+        value: "Placeholder School Name",
       },
       {
         label: "Education",
-        value: "Preschool to Grade 12",
+        value: "Placeholder Education Level",
       },
       {
         label: "Community",
-        value: "Learn · Grow · Belong",
+        value: "Placeholder Community Statement",
       },
       {
         label: "Recognition",
-        value: "DepEd-Recognized School",
+        value: "Placeholder Recognition",
       },
     ],
   },
 
+  /* =========================================================
+     ABOUT SECTIONS
+  ========================================================= */
+
   sections: {
+    /* =======================================================
+       01 — HISTORY
+    ======================================================= */
+
     history: {
       id: "history",
       number: "01",
+
       eyebrow: "About the School",
+
       title: "History",
+
       description:
-        "Discover the story of Village School of Parkwoods and the journey that shaped the school community we know today.",
+        "Placeholder content for the history section. Replace this with an overview of the school's origins, development, and journey.",
 
       items: [
         {
           title: "Where It Started",
-          text: "Village School of Parkwoods was established with a vision of creating an accessible and nurturing learning environment for young learners.",
+
+          text: "Placeholder content for the school's beginnings, founding story, and early development.",
         },
         {
           title: "Growing Together",
-          text: "As the school community grew, VSOP continued to expand its educational programs and strengthen its commitment to quality basic education.",
+
+          text: "Placeholder content describing the school's growth, developments, and important milestones.",
         },
         {
           title: "VSOP Today",
-          text: "Today, Village School of Parkwoods continues to provide education from Preschool through Senior High School, helping students learn, grow, and prepare for their next chapter.",
+
+          text: "Placeholder content for the school's present-day story, community, and continued development.",
         },
       ],
     },
 
+    /* =======================================================
+       02 — MISSION, VISION & CORE VALUES
+    ======================================================= */
+
     missionVision: {
       id: "mission-vision",
       number: "02",
+
       eyebrow: "About the School",
-      title: "Mission, Vision & Core Values",
+
+      title: "Mission, Vision, and Core Values",
+
       description:
-        "The principles and aspirations that guide the VSOP community.",
+        "Placeholder content for the school's mission, vision, and core values. Replace this with the official statements and guiding principles of VSOP.",
 
       vision: {
         eyebrow: "Our Vision",
-        title: "Developing learners prepared for a meaningful future.",
+
+        title: "Placeholder vision statement for the school.",
       },
 
       mission: {
         eyebrow: "Our Mission",
+
         description:
-          "VSOP is committed to providing accessible, meaningful, and learner-centered education that develops knowledge, character, confidence, and a sense of responsibility.",
+          "Placeholder mission statement describing the school's educational purpose, commitments, and approach to learning.",
       },
 
       values: {
         eyebrow: "Core Values",
 
-        items: ["Excellence", "Integrity", "Belonging"],
+        description:
+          "Placeholder statement describing the school's guiding principles, values, and commitment to its learners and community.",
       },
     },
+
+    /* =======================================================
+       03 — ADMINISTRATION
+    ======================================================= */
 
     administration: {
       id: "administration",
       number: "03",
+
       eyebrow: "About the School",
+
       title: "Administration",
+
       description:
-        "Meet the leaders and administrators who help guide the VSOP community.",
+        "Placeholder content for the school's administration section. Replace this with information about the leaders and administrators of VSOP.",
 
       people: [
         {
-          name: "School Administrator",
-          role: "Administration",
+          name: "Placeholder Name",
+          role: "Placeholder Position",
         },
         {
-          name: "Academic Coordinator",
-          role: "Academic Affairs",
+          name: "Placeholder Name",
+          role: "Placeholder Position",
         },
         {
-          name: "School Registrar",
-          role: "Registrar",
+          name: "Placeholder Name",
+          role: "Placeholder Position",
         },
       ],
     },
+
+    /* =======================================================
+       04 — SCHOOL SEAL
+    ======================================================= */
 
     schoolSeal: {
       id: "school-seal",
       number: "04",
+
       eyebrow: "About the School",
+
       title: "School Seal",
+
       description:
-        "Explore the meaning and symbolism behind the official seal of Village School of Parkwoods.",
+        "Placeholder content for the school's official seal. Replace this with an explanation of the seal, its elements, and their meaning.",
 
-      image: "/Images/VSOP-Logo.png",
-      imageAlt: "Village School of Parkwoods seal",
+      image: "/Images/vsop-seal.png",
 
-      heading: "The symbolism of our identity.",
+      imageAlt: "Village School of Parkwoods School Seal",
 
-      text: "Every element of the school seal represents an important part of the identity, aspirations, and values of the VSOP community.",
+      heading: "Placeholder heading for the school seal.",
+
+      text: "Placeholder content describing the symbolism, identity, aspirations, and values represented by the school's official seal.",
     },
 
-    recognitions: {
-      id: "recognitions",
+    /* =======================================================
+       05 — SCHOOL HYMN
+    ======================================================= */
+
+    hymn: {
+      id: "hymn",
       number: "05",
+
       eyebrow: "About the School",
-      title: "Recognitions",
+
+      title: "School Hymn",
+
       description:
-        "Explore achievements, distinctions, and moments of excellence celebrated by VSOP.",
+        "Placeholder content for the official school hymn. Replace this with the approved hymn information and lyrics provided by VSOP.",
 
-      heading: "Celebrating excellence.",
+      schoolName: "Village School of Parkwoods",
 
-      text: "This section highlights the achievements and recognitions earned by the school community.",
+      label: "School Hymn",
 
-      items: [
-        "Academic Excellence",
-        "Outstanding Students",
-        "Leadership & Service",
-        "School Achievements",
-      ],
-    },
-
-    accreditations: {
-      id: "accreditations",
-      number: "06",
-      eyebrow: "About the School",
-      title: "Accreditations",
-      description:
-        "Learn about the accreditations, certifications, and educational standards upheld by VSOP.",
-
-      text: "VSOP works within established educational standards and maintains relationships with institutions and organizations that support quality education.",
-
-      organizations: [
-        "Department of Education",
-        "Private Education Assistance Committee",
-        "Partner Educational Institutions",
-      ],
+      lyrics:
+        "[School Hymn]\n\nPlaceholder text for the official\nVillage School of Parkwoods hymn.\n\nReplace this section with the complete\napproved lyrics provided by the school.",
     },
 
     facilities: {
       id: "facilities",
-      number: "07",
+      number: "06",
+
       eyebrow: "About the School",
+
       title: "Facilities",
+
       description:
-        "Take a closer look at the spaces designed to support student life and learning.",
+        "Placeholder content for the school's facilities section. Replace this with information about the spaces and facilities available to support student learning and school life.",
 
       items: [
         {
-          title: "Learning Spaces",
+          title: "Placeholder Facility",
           image: "/Images/image1.jpg",
         },
         {
-          title: "Student Areas",
+          title: "Placeholder Facility",
           image: "/Images/image2.jpg",
         },
         {
-          title: "School Facilities",
+          title: "Placeholder Facility",
           image: "/Images/image3.jpg",
         },
         {
-          title: "Community Spaces",
+          title: "Placeholder Facility",
           image: "/Images/image4.jpg",
         },
       ],
     },
 
-    linkages: {
-      id: "linkages",
-      number: "08",
-      eyebrow: "About the School",
-      title: "Linkages",
-      description:
-        "Discover the institutions and organizations connected to the VSOP community.",
+    /* =======================================================
+       07 — RECOGNITIONS
+    ======================================================= */
 
-      organizations: [
-        "Department of Education",
-        "Private Education Assistance Committee",
-        "University of the Philippines",
+    recognitions: {
+      id: "recognitions",
+      number: "07",
+
+      eyebrow: "About the School",
+
+      title: "Recognitions",
+
+      description:
+        "Placeholder content for the school's recognitions section. Replace this with verified achievements, distinctions, awards, and other notable accomplishments of VSOP.",
+
+      heading: "Placeholder heading for recognitions.",
+
+      text: "Placeholder content describing the achievements and recognitions received by the school community.",
+
+      items: [
+        "Placeholder Recognition",
+        "Placeholder Recognition",
+        "Placeholder Recognition",
+        "Placeholder Recognition",
       ],
     },
 
-    hymn: {
-      id: "hymn",
-      number: "09",
-      eyebrow: "About the School",
-      title: "School Hymn",
-      description:
-        "The hymn that reflects the spirit, identity, and values of the VSOP community.",
-
-      schoolName: "Village School of Parkwoods",
-      label: "School Hymn",
-
-      lyrics:
-        "[School Hymn]\n\nReplace this text with the official\nVillage School of Parkwoods hymn.\n\nAdd the complete approved lyrics\nprovided by the school here.",
-    },
+    /* =======================================================
+       08 — WHY JOIN VSOP
+    ======================================================= */
 
     whyJoin: {
       id: "why-join-vsop",
-      number: "10",
+      number: "08",
+
       eyebrow: "About the School",
+
       title: "Why Join VSOP",
+
       description:
-        "See what makes VSOP a place where students can learn, grow, and belong.",
+        "Placeholder content for the Why Join VSOP section. Replace this with the key benefits, strengths, and opportunities that make VSOP unique.",
 
       items: [
         {
-          title: "Continuous Learning",
-          text: "Students can progress through their education within one familiar school community.",
+          title: "Placeholder Benefit",
+          text: "Placeholder content describing one of the school's key strengths or benefits for learners and families.",
         },
         {
-          title: "Accessible Education",
-          text: "Quality education designed to provide opportunities for learners and families.",
+          title: "Placeholder Benefit",
+          text: "Placeholder content describing an aspect of the school's educational approach, programs, or community.",
         },
         {
-          title: "College Ready",
-          text: "Students are guided toward the knowledge, skills, and confidence needed for higher education.",
+          title: "Placeholder Benefit",
+          text: "Placeholder content describing the opportunities and support available to students.",
         },
         {
-          title: "A School Community",
-          text: "A supportive environment where students can learn, grow, and belong.",
+          title: "Placeholder Benefit",
+          text: "Placeholder content describing the school community and overall student experience.",
         },
       ],
     },
@@ -952,148 +981,197 @@ export const aboutContent = {
 export const monthlyContent = {
   1: {
     month: "January",
-    title: "A New Year of Learning",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "Welcome to a new year at Village School of Parkwoods. We look forward to another year of learning, growth, and meaningful experiences.",
+      "Placeholder content for January. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-january.jpg",
+
     button: {
-      label: "Learn More",
+      label: "WHAT'S NEW",
       href: "/news",
     },
   },
 
   2: {
     month: "February",
-    title: "Growing Together",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "February is a time to celebrate friendship, kindness, and the strong relationships that make our school community special.",
+      "Placeholder content for February. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-february.jpg",
+
     button: {
-      label: "Explore School Life",
-      href: "/student-life",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   3: {
     month: "March",
-    title: "Celebrating Achievement",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "As another school year reaches an important milestone, we celebrate the dedication, growth, and achievements of our learners.",
+      "Placeholder content for March. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-march.jpg",
+
     button: {
-      label: "See What's Happening",
+      label: "WHAT'S NEW",
       href: "/news",
     },
   },
 
   4: {
     month: "April",
-    title: "Learning Beyond the Classroom",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "April is an opportunity to explore, reflect, and continue learning beyond the traditional classroom environment.",
+      "Placeholder content for April. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-april.jpg",
+
     button: {
-      label: "Discover More",
-      href: "/student-life",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   5: {
     month: "May",
-    title: "Looking Ahead",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "As the school year comes to a close, we celebrate the journey our students have taken and look ahead to new opportunities.",
+      "Placeholder content for May. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-may.jpg",
+
     button: {
-      label: "Admissions",
-      href: "/admissions",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   6: {
     month: "June",
-    title: "Welcome Back to School",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "A new school year begins. Welcome students and families to another year of learning, discovery, and community.",
+      "Placeholder content for June. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-june.jpg",
+
     button: {
-      label: "Explore Academics",
-      href: "/academics",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   7: {
     month: "July",
-    title: "A New Chapter Begins",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "The school year is underway. Together, we begin another chapter filled with learning, friendship, and new possibilities.",
+      "Placeholder content for July. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-july.jpg",
+
     button: {
-      label: "Explore VSOP",
-      href: "/about",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   8: {
     month: "August",
-    title: "Celebrating Our Culture",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "This month, we celebrate language, culture, identity, and the diverse experiences that enrich our school community.",
+      "Placeholder content for August. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-august.jpg",
+
     button: {
-      label: "School Life",
-      href: "/student-life",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   9: {
     month: "September",
-    title: "Learning in Motion",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "The school year continues with new lessons, new experiences, and opportunities for every learner to grow.",
+      "Placeholder content for September. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-september.jpg",
+
     button: {
-      label: "What's New",
+      label: "WHAT'S NEW",
       href: "/news",
     },
   },
 
   10: {
     month: "October",
-    title: "A Month of Discovery",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "October brings opportunities for students to explore new ideas, develop their skills, and take part in school activities.",
+      "Placeholder content for October. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-october.jpg",
+
     button: {
-      label: "Explore Student Life",
-      href: "/student-life",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   11: {
     month: "November",
-    title: "Growing With Gratitude",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "November is a time to appreciate the people, experiences, and opportunities that shape our learning community.",
+      "Placeholder content for November. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-november.jpg",
+
     button: {
-      label: "Discover VSOP",
-      href: "/about",
+      label: "WHAT'S NEW",
+      href: "/news",
     },
   },
 
   12: {
     month: "December",
-    title: "Celebrating Together",
+
+    title: "Placeholder Monthly Content",
+
     description:
-      "As the year comes to a close, we celebrate our community and the memories, achievements, and experiences we have shared.",
+      "Placeholder content for December. Replace this with the featured message, announcement, activity, or school highlight for this month.",
+
     image: "/Images/month-december.jpg",
+
     button: {
-      label: "School News",
+      label: "WHAT'S NEW",
       href: "/news",
     },
   },
 };
+
 /* =========================================================
    HOMEPAGE — RECOGNIZED & SUPPORTED BY
 ========================================================= */
@@ -1119,9 +1197,11 @@ export const scrollingMarqueeContent = {
   ],
 };
 
-export const calendarContent = {
-  academicYear: "Academic Year 2026–2027",
+/* =========================================================
+   HOMEPAGE — SCHOOL CALENDAR
+========================================================= */
 
+export const calendarContent = {
   eyebrow: "Academic Year 2026–2027",
 
   title: "School Calendar",
@@ -1131,15 +1211,18 @@ export const calendarContent = {
 
   previousLabel: "Previous month",
   nextLabel: "Next month",
+
   fullCalendarLabel: "View Full Calendar",
   fullCalendarHref: "/calendar",
 
   featuredLabel: "Featured This Month",
 
   months: [
+    // June 2026
     {
       month: "June",
       year: "2026",
+
       events: [
         {
           date: "01",
@@ -1186,9 +1269,11 @@ export const calendarContent = {
       ],
     },
 
+    // July 2026
     {
       month: "July",
       year: "2026",
+
       events: [
         {
           date: "03",
@@ -1229,9 +1314,11 @@ export const calendarContent = {
       ],
     },
 
+    // August 2026
     {
       month: "August",
       year: "2026",
+
       events: [
         {
           date: "03",
@@ -1272,9 +1359,11 @@ export const calendarContent = {
       ],
     },
 
+    // September 2026
     {
       month: "September",
       year: "2026",
+
       events: [
         {
           date: "01",
@@ -1321,9 +1410,11 @@ export const calendarContent = {
       ],
     },
 
+    // October 2026
     {
       month: "October",
       year: "2026",
+
       events: [
         {
           date: "01",
@@ -1376,9 +1467,11 @@ export const calendarContent = {
       ],
     },
 
+    // November 2026
     {
       month: "November",
       year: "2026",
+
       events: [
         {
           date: "02",
@@ -1425,9 +1518,11 @@ export const calendarContent = {
       ],
     },
 
+    // December 2026
     {
       month: "December",
       year: "2026",
+
       events: [
         {
           date: "01",
@@ -1474,9 +1569,11 @@ export const calendarContent = {
       ],
     },
 
+    // January 2027
     {
       month: "January",
       year: "2027",
+
       events: [
         {
           date: "04",
@@ -1523,9 +1620,11 @@ export const calendarContent = {
       ],
     },
 
+    // February 2027
     {
       month: "February",
       year: "2027",
+
       events: [
         {
           date: "01",
@@ -1572,9 +1671,11 @@ export const calendarContent = {
       ],
     },
 
+    // March 2027
     {
       month: "March",
       year: "2027",
+
       events: [
         {
           date: "01",
@@ -1627,9 +1728,11 @@ export const calendarContent = {
       ],
     },
 
+    // April 2027
     {
       month: "April",
       year: "2027",
+
       events: [
         {
           date: "01",
@@ -1670,9 +1773,11 @@ export const calendarContent = {
       ],
     },
 
+    // May 2027
     {
       month: "May",
       year: "2027",
+
       events: [
         {
           date: "03",
@@ -1707,4 +1812,2518 @@ export const calendarContent = {
       ],
     },
   ],
+};
+
+/* =========================================================
+   HOMEPAGE — SCHOOL HIGHLIGHTS
+========================================================= */
+
+export const schoolHighlightsContent = {
+  eyebrow: "School Highlights",
+
+  heading: "Everything you need to know.",
+
+  description:
+    "Quick access to important information for students, parents, and the school community.",
+
+  items: [
+    {
+      icon: "calendar",
+      label: "School Calendar",
+      title: "Important dates & events",
+      text: "View the academic calendar, holidays, examinations, and school activities.",
+      href: "/school-calendar",
+    },
+    {
+      icon: "bell",
+      label: "Announcements",
+      title: "What's happening",
+      text: "Stay updated with the latest school announcements and notices.",
+      href: "/announcements",
+    },
+    {
+      icon: "clipboard",
+      label: "Admissions",
+      title: "Start your journey",
+      text: "Learn about enrollment, requirements, and the admissions process.",
+      href: "/admissions",
+    },
+    {
+      icon: "users",
+      label: "Student Life",
+      title: "Life beyond the classroom",
+      text: "Discover activities, organizations, events, and opportunities for students.",
+      href: "/student-life",
+    },
+    {
+      icon: "download",
+      label: "Resources",
+      title: "Forms & downloads",
+      text: "Access important forms, documents, handbooks, and other resources.",
+      href: "/resources",
+    },
+  ],
+};
+
+/* =========================================================
+   ADMISSIONS — OVERVIEW
+========================================================= */
+
+export const admissionsContent = {
+  navigation: [
+    {
+      id: "enrollment",
+      label: "Enrollment Procedures",
+    },
+    {
+      id: "requirements",
+      label: "Requirements",
+    },
+    {
+      id: "tuition",
+      label: "Tuition Fees",
+    },
+    {
+      id: "financial-aid",
+      label: "Financial Aid",
+    },
+  ],
+
+  hero: {
+    backHref: "/",
+    backLabel: "Back to Home",
+
+    eyebrow: "Admissions",
+
+    title: "Placeholder Admissions Title",
+
+    description:
+      "Placeholder content for the admissions overview. Replace this with information about enrollment, requirements, tuition, and available financial assistance at Village School of Parkwoods.",
+
+    metadata: [
+      {
+        label: "School",
+        value: "Placeholder School Name",
+      },
+      {
+        label: "Programs",
+        value: "Placeholder Education Programs",
+      },
+      {
+        label: "Senior High",
+        value: "Placeholder Senior High Programs",
+      },
+      {
+        label: "Admissions",
+        value: "Placeholder Admissions Information",
+      },
+    ],
+  },
+
+  enrollment: {
+    eyebrow: "Enrollment Procedures",
+
+    title: "Placeholder Enrollment Title",
+
+    description:
+      "Placeholder content for the enrollment procedures section. Replace this with the official enrollment process and instructions provided by Village School of Parkwoods.",
+
+    image: {
+      src: "/Images/image1.jpg",
+      alt: "Placeholder image for enrollment",
+    },
+
+    steps: [
+      {
+        number: "01",
+        title: "Placeholder Step",
+        text: "Placeholder content for the first enrollment step and the information families need to know.",
+      },
+      {
+        number: "02",
+        title: "Placeholder Step",
+        text: "Placeholder content for the second enrollment step and the information families need to know.",
+      },
+      {
+        number: "03",
+        title: "Placeholder Step",
+        text: "Placeholder content for the third enrollment step and the information families need to know.",
+      },
+      {
+        number: "04",
+        title: "Placeholder Step",
+        text: "Placeholder content for the fourth enrollment step and the information families need to know.",
+      },
+      {
+        number: "05",
+        title: "Placeholder Step",
+        text: "Placeholder content for the final enrollment step and completion instructions.",
+      },
+    ],
+  },
+
+  requirements: {
+    eyebrow: "Requirements",
+
+    title: "Placeholder Requirements Title",
+
+    description:
+      "Placeholder content for the admissions requirements section. Replace this with the official requirements and document checklist provided by Village School of Parkwoods.",
+
+    image: {
+      src: "/Images/image2.jpg",
+      alt: "Placeholder image for admissions requirements",
+    },
+
+    items: [
+      {
+        title: "Preschool",
+        text: "Placeholder content for the requirements and documents needed for Preschool applicants.",
+      },
+      {
+        title: "Grade School",
+        text: "Placeholder content for the requirements and documents needed for Grade School applicants.",
+      },
+      {
+        title: "Junior High School",
+        text: "Placeholder content for the requirements and documents needed for Junior High School applicants.",
+      },
+      {
+        title: "Senior High School",
+        text: "Placeholder content for the requirements and documents needed for Senior High School applicants.",
+      },
+    ],
+
+    important: {
+      label: "Important",
+
+      text: "Placeholder notice for important admissions requirements. Replace this with the school's official instructions regarding document requirements and updates.",
+    },
+  },
+
+  tuition: {
+    eyebrow: "Tuition Fees",
+
+    title: "Placeholder Tuition Title",
+
+    description:
+      "Placeholder content for the tuition fees section. Replace this with the official tuition rates, school fees, subsidies, and payment information provided by Village School of Parkwoods.",
+
+    image: {
+      src: "/Images/image3.jpg",
+      alt: "Placeholder image for tuition information",
+    },
+
+    levels: [
+      {
+        title: "Preschool",
+        text: "Placeholder content for Preschool tuition fees and applicable school charges.",
+      },
+      {
+        title: "Grade School",
+        text: "Placeholder content for Grade School tuition fees and applicable school charges.",
+      },
+      {
+        title: "Junior High School",
+        text: "Placeholder content for Junior High School tuition fees, subsidies, and applicable conditions.",
+      },
+      {
+        title: "Senior High School",
+        text: "Placeholder content for Senior High School tuition fees, government subsidies, eligibility, and requirements.",
+      },
+    ],
+
+    information: {
+      label: "Tuition Information",
+
+      text: "Tuition and other school fees may vary by grade level, program, and applicable subsidies. Please contact the school for the most current fee schedule and enrollment details.",
+    },
+  },
+
+  financialAid: {
+    eyebrow: "Financial Aid",
+
+    title: "Placeholder Financial Aid Title",
+
+    description:
+      "Placeholder content for the financial aid section. Replace this with official information about government subsidies, financial assistance, eligibility, and available support programs.",
+
+    image: {
+      src: "/Images/image4.jpg",
+      alt: "Placeholder image for financial aid information",
+    },
+
+    items: [
+      {
+        title: "Government Subsidies",
+        text: "Placeholder content for applicable government-supported education programs and subsidies.",
+      },
+      {
+        title: "Senior High School",
+        text: "Placeholder content for Senior High School financial assistance, eligibility, and applicable programs.",
+      },
+      {
+        title: "Tuition Assistance",
+        text: "Placeholder content for available tuition assistance, eligibility requirements, and conditions.",
+      },
+      {
+        title: "Admissions Inquiry",
+        text: "Placeholder content for contacting the school regarding financial assistance and enrollment support.",
+      },
+    ],
+
+    cta: {
+      eyebrow: "Have Questions?",
+
+      title: "Let's help you take the next step.",
+
+      description:
+        "For the latest information about enrollment, requirements, tuition, and financial assistance, get in touch with the school.",
+
+      buttonLabel: "Contact the School",
+
+      buttonHref: "/contact",
+    },
+  },
+};
+
+/* =========================================================
+   ADMISSIONS — ENROLLMENT PROCEDURES
+========================================================= */
+
+export const enrollmentProceduresContent = {
+  navigation: [
+    {
+      id: "enrollment",
+      label: "Enrollment Procedures",
+      href: "/admissions/enrollment-procedures",
+    },
+    {
+      id: "requirements",
+      label: "Requirements",
+      href: "/admissions/requirements",
+    },
+    {
+      id: "tuition",
+      label: "Tuition Fees",
+      href: "/admissions/tuition-fees",
+    },
+    {
+      id: "financial-aid",
+      label: "Financial Aid",
+      href: "/admissions/financial-aid",
+    },
+  ],
+
+  hero: {
+    backHref: "/admissions",
+    backLabel: "Back to Admissions",
+
+    eyebrow: "Admissions",
+
+    title: "Enrollment Procedures",
+
+    description:
+      "A clear overview of the steps involved in starting the enrollment process at Village School of Parkwoods.",
+
+    metadata: [
+      {
+        label: "School",
+        value: "Village School of Parkwoods",
+      },
+      {
+        label: "Levels",
+        value: "Preschool to Grade 12",
+      },
+      {
+        label: "Process",
+        value: "Application & Enrollment",
+      },
+      {
+        label: "Admissions",
+        value: "New & Returning Students",
+      },
+    ],
+  },
+
+  process: {
+    eyebrow: "The Process",
+
+    title: "A straightforward path to enrollment.",
+
+    description:
+      "The enrollment process is designed to help families understand the school, select the appropriate program, prepare the necessary documents, and complete enrollment.",
+
+    steps: [
+      {
+        number: "01",
+        title: "Make an Inquiry",
+
+        description:
+          "Begin by contacting Village School of Parkwoods to learn about available programs, enrollment schedules, and the appropriate admission process for the learner.",
+      },
+      {
+        number: "02",
+        title: "Choose a Program",
+
+        description:
+          "Identify the appropriate educational level or program based on the learner's current grade level, educational needs, and intended pathway.",
+      },
+      {
+        number: "03",
+        title: "Prepare the Requirements",
+
+        description:
+          "Gather the documents required for the selected level. Requirements may vary depending on whether the learner is a new student, transferee, or returning student.",
+      },
+      {
+        number: "04",
+        title: "Submit the Requirements",
+
+        description:
+          "Submit the completed requirements to the school for checking and processing. The admissions team can assist with questions regarding missing or additional documents.",
+      },
+      {
+        number: "05",
+        title: "Complete Enrollment",
+
+        description:
+          "Once the requirements and enrollment details have been confirmed, complete the remaining enrollment steps and receive the information needed for the start of classes.",
+      },
+    ],
+  },
+
+  beforeYouBegin: {
+    eyebrow: "Before You Begin",
+
+    title: "Prepare early.",
+
+    description:
+      "Having the necessary information and documents ready can make the enrollment process easier and more efficient.",
+
+    items: [
+      {
+        number: "01",
+        title: "Know the Grade Level",
+
+        text: "Confirm the learner's current or incoming grade level before beginning the application.",
+      },
+      {
+        number: "02",
+        title: "Review Requirements",
+
+        text: "Check the documents needed for the appropriate educational level.",
+      },
+      {
+        number: "03",
+        title: "Ask Questions",
+
+        text: "Contact the school if you need clarification about enrollment, programs, or documents.",
+      },
+      {
+        number: "04",
+        title: "Keep Copies",
+
+        text: "Keep copies of submitted documents and enrollment information for your records.",
+      },
+    ],
+  },
+
+  cta: {
+    eyebrow: "Need assistance?",
+
+    title: "Have a question about enrollment?",
+
+    description:
+      "Contact Village School of Parkwoods for guidance about the enrollment process and the appropriate requirements.",
+
+    buttonLabel: "Contact the School",
+
+    buttonHref: "/contact",
+  },
+};
+
+/* =========================================================
+   ADMISSIONS — FINANCIAL AID
+========================================================= */
+
+export const financialAidContent = {
+  navigation: [
+    {
+      id: "enrollment",
+      label: "Enrollment Procedures",
+      href: "/admissions/enrollment-procedures",
+    },
+    {
+      id: "requirements",
+      label: "Requirements",
+      href: "/admissions/requirements",
+    },
+    {
+      id: "tuition",
+      label: "Tuition Fees",
+      href: "/admissions/tuition-fees",
+    },
+    {
+      id: "financial-aid",
+      label: "Financial Aid",
+      href: "/admissions/financial-aid",
+    },
+  ],
+
+  hero: {
+    backHref: "/admissions",
+    backLabel: "Back to Admissions",
+
+    eyebrow: "Admissions",
+
+    title: "Financial Aid",
+
+    description:
+      "Information about government subsidies and possible financial assistance available to eligible VSOP learners.",
+
+    metadata: [
+      {
+        label: "School",
+        value: "Village School of Parkwoods",
+      },
+      {
+        label: "Levels",
+        value: "Preschool to Grade 12",
+      },
+      {
+        label: "Senior High",
+        value: "Government Subsidy",
+      },
+      {
+        label: "Support",
+        value: "Financial Assistance",
+      },
+    ],
+  },
+
+  financialSupport: {
+    eyebrow: "Financial Support",
+
+    title: "Making education more accessible.",
+
+    description:
+      "VSOP recognizes the importance of accessible education and provides information about available government-supported programs and possible assistance.",
+
+    items: [
+      {
+        number: "01",
+        title: "Government Subsidies",
+
+        description:
+          "Government-supported programs may help make education more accessible to eligible learners, subject to applicable program rules and conditions.",
+      },
+      {
+        number: "02",
+        title: "Senior High School",
+
+        description:
+          "Eligible Senior High School students may benefit from government subsidies, subject to the applicable eligibility requirements and school policies.",
+      },
+      {
+        number: "03",
+        title: "Tuition Assistance",
+
+        description:
+          "Families who need information about possible tuition assistance or available support may contact the school for guidance.",
+      },
+    ],
+  },
+
+  seniorHigh: {
+    eyebrow: "Senior High School",
+
+    title: "Government subsidy may be available.",
+
+    description:
+      "Eligible Senior High School students may benefit from government subsidies, subject to applicable requirements, eligibility conditions, and school policies.",
+
+    strands: [
+      {
+        label: "Strand",
+
+        title: "General Academic Strand",
+
+        description: "Explore the GAS pathway and its academic opportunities.",
+
+        href: "/academics/senior-high-school/gas",
+
+        buttonLabel: "Explore GAS",
+      },
+      {
+        label: "Strand",
+
+        title: "TVL — ICT",
+
+        description:
+          "Explore the TVL-ICT pathway and its technology-focused opportunities.",
+
+        href: "/academics/senior-high-school/tvl-ict",
+
+        buttonLabel: "Explore TVL-ICT",
+      },
+    ],
+  },
+
+  inquiry: {
+    eyebrow: "How to Ask",
+
+    title: "Start with an inquiry.",
+
+    description:
+      "Financial assistance and subsidy eligibility can depend on the learner, program, and applicable government or school policies.",
+
+    steps: [
+      {
+        number: "01",
+        title: "Identify the Program",
+
+        text: "Know which educational level or Senior High School strand the learner intends to enter.",
+      },
+      {
+        number: "02",
+        title: "Ask About Eligibility",
+
+        text: "Contact the school to understand whether a subsidy or assistance program may apply.",
+      },
+      {
+        number: "03",
+        title: "Prepare Documents",
+
+        text: "Be ready to provide the documents needed to determine eligibility or process the application.",
+      },
+    ],
+  },
+
+  important: {
+    eyebrow: "Important",
+
+    title: "Confirm the latest information.",
+
+    description:
+      "Financial assistance programs, eligibility requirements, and subsidy policies may change. Families should confirm current details directly with the school.",
+
+    note: "The information on this page is intended as a general guide and does not replace confirmation from the school or the applicable government program.",
+  },
+
+  cta: {
+    eyebrow: "Financial Assistance Inquiry",
+
+    title: "Want to know what support may apply?",
+
+    description:
+      "Contact Village School of Parkwoods to ask about available subsidies, assistance, and eligibility requirements.",
+
+    buttonLabel: "Contact the School",
+
+    buttonHref: "/contact",
+  },
+};
+
+/* =========================================================
+   ADMISSIONS — REQUIREMENTS
+========================================================= */
+
+export const requirementsContent = {
+  navigation: [
+    {
+      id: "enrollment",
+      label: "Enrollment Procedures",
+      href: "/admissions/enrollment-procedures",
+    },
+    {
+      id: "requirements",
+      label: "Requirements",
+      href: "/admissions/requirements",
+    },
+    {
+      id: "tuition",
+      label: "Tuition Fees",
+      href: "/admissions/tuition-fees",
+    },
+    {
+      id: "financial-aid",
+      label: "Financial Aid",
+      href: "/admissions/financial-aid",
+    },
+  ],
+
+  hero: {
+    backHref: "/admissions",
+    backLabel: "Back to Admissions",
+
+    eyebrow: "Admissions",
+
+    title: "Admission Requirements",
+
+    description:
+      "Review the general requirements for enrollment across the different educational levels at Village School of Parkwoods.",
+
+    metadata: [
+      {
+        label: "School",
+        value: "Village School of Parkwoods",
+      },
+      {
+        label: "Levels",
+        value: "Preschool to Grade 12",
+      },
+      {
+        label: "Programs",
+        value: "Basic & Senior High School",
+      },
+      {
+        label: "Admissions",
+        value: "Requirements",
+      },
+    ],
+  },
+
+  educationalLevels: {
+    eyebrow: "By Educational Level",
+
+    title: "Requirements depend on the learner's level.",
+
+    description:
+      "The documents required for enrollment may vary according to the educational level and the learner's enrollment status.",
+
+    items: [
+      {
+        level: "Preschool",
+
+        description:
+          "Documents and enrollment information required for learners entering the preschool program.",
+      },
+      {
+        level: "Grade School",
+
+        description:
+          "Requirements for learners entering the elementary or grade school level.",
+      },
+      {
+        level: "Junior High School",
+
+        description:
+          "Enrollment documents for learners entering the junior high school level.",
+      },
+      {
+        level: "Senior High School",
+
+        description:
+          "Requirements for learners entering Senior High School, including students selecting the GAS or TVL-ICT pathway.",
+      },
+    ],
+  },
+
+  generalDocuments: {
+    eyebrow: "General Documents",
+
+    title: "Prepare the essentials.",
+
+    description:
+      "Families may be asked to provide school records and identification documents as part of the enrollment process.",
+
+    items: [
+      "Learner's birth certificate or equivalent civil document",
+      "Previous school records, when applicable",
+      "Recent school or identification records, when applicable",
+      "Parent or guardian identification",
+      "Other documents requested by the school",
+    ],
+  },
+
+  important: {
+    eyebrow: "Important",
+
+    title: "Requirements may vary.",
+
+    description:
+      "The list above is intended as a general guide. The school may request additional or updated documents depending on the learner's circumstances and enrollment category.",
+
+    note: "For the most accurate and current requirements, families should confirm the applicable documents directly with the school before submitting their application.",
+  },
+
+  cta: {
+    eyebrow: "Need clarification?",
+
+    title: "Ask about admission requirements.",
+
+    description:
+      "Contact the school if you need help determining which documents apply to your learner.",
+
+    buttonLabel: "Ask About Requirements",
+
+    buttonHref: "/contact",
+  },
+};
+
+/* =========================================================
+   ADMISSIONS — TUITION FEES
+========================================================= */
+
+export const tuitionFeesContent = {
+  navigation: [
+    {
+      id: "enrollment",
+      label: "Enrollment Procedures",
+      href: "/admissions/enrollment-procedures",
+    },
+    {
+      id: "requirements",
+      label: "Requirements",
+      href: "/admissions/requirements",
+    },
+    {
+      id: "tuition",
+      label: "Tuition Fees",
+      href: "/admissions/tuition-fees",
+    },
+    {
+      id: "financial-aid",
+      label: "Financial Aid",
+      href: "/admissions/financial-aid",
+    },
+  ],
+
+  hero: {
+    backHref: "/admissions",
+    backLabel: "Back to Admissions",
+
+    eyebrow: "Admissions",
+
+    title: "Tuition Fees",
+
+    description:
+      "An overview of tuition information for the different educational levels offered at Village School of Parkwoods.",
+
+    metadata: [
+      {
+        label: "School",
+        value: "Village School of Parkwoods",
+      },
+      {
+        label: "Levels",
+        value: "Preschool to Grade 12",
+      },
+      {
+        label: "Junior High",
+        value: "Less than ₱13,000",
+      },
+      {
+        label: "Senior High",
+        value: "Government Subsidy",
+      },
+    ],
+  },
+
+  tuitionInformation: {
+    eyebrow: "Tuition Information",
+
+    title: "Plan with clarity.",
+
+    description:
+      "Tuition and school fees may vary by educational level, school year, and applicable programs or subsidies.",
+
+    levels: [
+      {
+        level: "Preschool",
+
+        description:
+          "Tuition and applicable school fees depend on the selected preschool program and current school-year policies.",
+      },
+      {
+        level: "Grade School",
+
+        description:
+          "Tuition and applicable fees are determined according to the learner's grade level and the current school-year schedule.",
+      },
+      {
+        level: "Junior High School",
+
+        description:
+          "Junior High School tuition is less than ₱13,000, subject to applicable conditions and school policies.",
+      },
+      {
+        level: "Senior High School",
+
+        description:
+          "Eligible Senior High School students may benefit from government subsidies, subject to applicable eligibility requirements and program conditions.",
+      },
+    ],
+  },
+
+  juniorHigh: {
+    eyebrow: "Junior High School",
+
+    title: "Less than ₱13,000.",
+
+    description:
+      "Village School of Parkwoods offers Junior High School tuition at less than ₱13,000, subject to applicable conditions and school policies.",
+
+    note: "Families should confirm the current school-year tuition schedule and any applicable fees directly with the school before enrollment.",
+  },
+
+  seniorHigh: {
+    eyebrow: "Senior High School",
+
+    title: "Government-supported education.",
+
+    description:
+      "Eligible Senior High School students may benefit from government subsidies, subject to applicable requirements, eligibility conditions, and school policies.",
+
+    strands: [
+      {
+        label: "Strand",
+
+        title: "General Academic Strand",
+
+        href: "/academics/senior-high-school/gas",
+
+        buttonLabel: "Explore GAS",
+      },
+      {
+        label: "Strand",
+
+        title: "TVL — ICT",
+
+        href: "/academics/senior-high-school/tvl-ict",
+
+        buttonLabel: "Explore TVL-ICT",
+      },
+    ],
+  },
+
+  important: {
+    eyebrow: "Please Note",
+
+    title: "Confirm the current schedule.",
+
+    description:
+      "Published tuition information is intended as a guide. Actual fees may depend on the learner's program, grade level, applicable subsidy, and current school policies.",
+
+    note: "For the latest tuition schedule and applicable fees, please contact the school directly before completing enrollment.",
+  },
+
+  cta: {
+    eyebrow: "Tuition Inquiry",
+
+    title: "Have questions about tuition?",
+
+    description:
+      "Contact the school for the latest tuition information, applicable fees, and available subsidies.",
+
+    buttonLabel: "Inquire About Tuition",
+
+    buttonHref: "/contact",
+  },
+};
+
+/* =========================================================
+   PRESCHOOL PAGE
+========================================================= */
+
+export const preschoolContent = {
+  hero: {
+    label: "Basic Education",
+    title: "Preschool",
+    desc: "Placeholder content for the Preschool program. Replace this with an official introduction to the program, its learning approach, and what families can expect.",
+  },
+
+  overview: {
+    number: "01",
+    eyebrow: "Overview",
+    title: "Placeholder Overview Title.",
+    paragraphs: [
+      "Placeholder content for an overview of the Preschool program, including its purpose, approach, and learning environment.",
+      "Placeholder content describing the experiences, activities, and opportunities provided to young learners throughout the program.",
+    ],
+  },
+
+  learningProgram: {
+    number: "02",
+    eyebrow: "Learning Program",
+    title: "Placeholder Learning Program Title.",
+    description:
+      "Placeholder content describing the Preschool learning program, educational approach, and developmental opportunities provided to learners.",
+
+    items: [
+      {
+        icon: "book-open",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing an area of learning or development included in the Preschool program.",
+      },
+      {
+        icon: "puzzle",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing an area of learning or development included in the Preschool program.",
+      },
+      {
+        icon: "heart",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing an area of learning or development included in the Preschool program.",
+      },
+      {
+        icon: "palette",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing an area of learning or development included in the Preschool program.",
+      },
+    ],
+  },
+
+  whatChildrenLearn: {
+    number: "03",
+    eyebrow: "What Children Learn",
+    title: "Placeholder Learning Outcomes Title.",
+    description:
+      "Placeholder content describing the knowledge, skills, and developmental areas learners may work toward during the Preschool program.",
+
+    image: {
+      src: "/Images/image2.jpg",
+      alt: "Placeholder image for Preschool learning",
+    },
+
+    items: [
+      "Placeholder learning outcome",
+      "Placeholder learning outcome",
+      "Placeholder learning outcome",
+      "Placeholder learning outcome",
+      "Placeholder learning outcome",
+      "Placeholder learning outcome",
+      "Placeholder learning outcome",
+      "Placeholder learning outcome",
+    ],
+  },
+
+  learningEnvironment: {
+    number: "04",
+    eyebrow: "Learning Environment",
+    title: "Placeholder Learning Environment Title.",
+    description:
+      "Placeholder content describing the Preschool learning environment, classroom experience, and opportunities provided to young learners.",
+
+    items: [
+      "Placeholder learning environment detail",
+      "Placeholder learning environment detail",
+      "Placeholder learning environment detail",
+      "Placeholder learning environment detail",
+    ],
+  },
+
+  dailyExperience: {
+    number: "05",
+    eyebrow: "Daily Experience",
+    title: "Placeholder Daily Experience Title.",
+    description:
+      "Placeholder content describing a typical Preschool experience, including classroom activities, routines, learning, play, and other daily experiences.",
+
+    items: [
+      {
+        number: "01",
+        title: "Placeholder Daily Activity",
+        text: "Placeholder content describing the first part of the learner's daily experience.",
+      },
+      {
+        number: "02",
+        title: "Placeholder Daily Activity",
+        text: "Placeholder content describing the second part of the learner's daily experience.",
+      },
+      {
+        number: "03",
+        title: "Placeholder Daily Activity",
+        text: "Placeholder content describing the third part of the learner's daily experience.",
+      },
+      {
+        number: "04",
+        title: "Placeholder Daily Activity",
+        text: "Placeholder content describing the fourth part of the learner's daily experience.",
+      },
+      {
+        number: "05",
+        title: "Placeholder Daily Activity",
+        text: "Placeholder content describing the final part of the learner's daily experience.",
+      },
+    ],
+  },
+
+  developmentalFocus: {
+    number: "06",
+    eyebrow: "Developmental Focus",
+    title: "Placeholder Developmental Focus Title.",
+
+    items: [
+      {
+        title: "Placeholder Developmental Area",
+        text: "Placeholder content describing a developmental focus of the Preschool program.",
+      },
+      {
+        title: "Placeholder Developmental Area",
+        text: "Placeholder content describing a developmental focus of the Preschool program.",
+      },
+      {
+        title: "Placeholder Developmental Area",
+        text: "Placeholder content describing a developmental focus of the Preschool program.",
+      },
+      {
+        title: "Placeholder Developmental Area",
+        text: "Placeholder content describing a developmental focus of the Preschool program.",
+      },
+      {
+        title: "Placeholder Developmental Area",
+        text: "Placeholder content describing a developmental focus of the Preschool program.",
+      },
+      {
+        title: "Placeholder Developmental Area",
+        text: "Placeholder content describing a developmental focus of the Preschool program.",
+      },
+    ],
+  },
+
+  parents: {
+    number: "07",
+    eyebrow: "For Parents",
+    icon: "users",
+    title: "Placeholder Parent Information Title.",
+    description:
+      "Placeholder content for parents and families. Replace this with information about supporting a child's Preschool journey and the next steps for enrollment.",
+
+    links: [
+      {
+        number: "01",
+        title: "Enrollment",
+        href: "/admissions#enrollment",
+      },
+      {
+        number: "02",
+        title: "Requirements",
+        href: "/admissions#requirements",
+      },
+      {
+        number: "03",
+        title: "Tuition Fees",
+        href: "/admissions#tuition",
+      },
+      {
+        number: "04",
+        title: "Financial Aid",
+        href: "/admissions#financial-aid",
+      },
+    ],
+
+    actions: [
+      {
+        label: "Visit Admissions",
+        href: "/admissions",
+        variant: "primary",
+      },
+      {
+        label: "Contact VSOP",
+        href: "/contact",
+        variant: "secondary",
+      },
+    ],
+  },
+
+  relatedPrograms: {
+    eyebrow: "Basic Education",
+    title: "Placeholder Related Programs Title.",
+
+    overviewLink: {
+      label: "View Basic Education",
+      href: "/academics/basic-education",
+    },
+
+    items: [
+      {
+        eyebrow: "Next Stage",
+        title: "Grade School",
+        description:
+          "Placeholder content for the next stage of the Basic Education program.",
+        label: "Explore Grade School",
+        href: "/academics/basic-education/grade-school",
+      },
+      {
+        eyebrow: "Basic Education",
+        title: "Junior High School",
+        description:
+          "Placeholder content for the Junior High School program and its learning experience.",
+        label: "Explore Junior High",
+        href: "/academics/basic-education/junior-high-school",
+      },
+    ],
+  },
+};
+/* =========================================================
+   GRADE SCHOOL PAGE
+========================================================= */
+
+export const gradeSchoolContent = {
+  hero: {
+    label: "Basic Education",
+    title: "Grade School",
+    desc: "Placeholder content for the Grade School program. Replace this with an official introduction to the program, its learning approach, and what families can expect.",
+  },
+
+  overview: {
+    number: "01",
+    eyebrow: "Overview",
+    title: "Placeholder Overview Title.",
+    paragraphs: [
+      "Placeholder content for an overview of the Grade School program, including its purpose, approach, and educational experience.",
+      "Placeholder content describing the learning opportunities, activities, and skills students may develop throughout the program.",
+    ],
+  },
+
+  academicFoundation: {
+    number: "02",
+    eyebrow: "Academic Foundation",
+    title: "Placeholder Academic Foundation Title.",
+    description:
+      "Placeholder content describing the key learning areas, academic foundations, and essential skills developed throughout Grade School.",
+
+    items: [
+      {
+        icon: "book-open",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Grade School program.",
+      },
+      {
+        icon: "target",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Grade School program.",
+      },
+      {
+        icon: "lightbulb",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Grade School program.",
+      },
+      {
+        icon: "users",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Grade School program.",
+      },
+      {
+        icon: "pen-line",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Grade School program.",
+      },
+      {
+        icon: "heart",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Grade School program.",
+      },
+    ],
+  },
+
+  learningExperience: {
+    number: "03",
+    eyebrow: "Learning Experience",
+    title: "Placeholder Learning Experience Title.",
+    description:
+      "Placeholder content describing the classroom experience, activities, projects, collaboration, and other learning opportunities available to Grade School students.",
+
+    image: {
+      src: "/Images/image3.jpg",
+      alt: "Placeholder image for Grade School learning",
+    },
+
+    items: [
+      {
+        title: "Placeholder Experience",
+        text: "Placeholder content describing an aspect of the Grade School learning experience.",
+      },
+      {
+        title: "Placeholder Experience",
+        text: "Placeholder content describing an aspect of the Grade School learning experience.",
+      },
+      {
+        title: "Placeholder Experience",
+        text: "Placeholder content describing an aspect of the Grade School learning experience.",
+      },
+      {
+        title: "Placeholder Experience",
+        text: "Placeholder content describing an aspect of the Grade School learning experience.",
+      },
+    ],
+  },
+
+  studentDevelopment: {
+    number: "04",
+    eyebrow: "Student Development",
+    title: "Placeholder Student Development Title.",
+    description:
+      "Placeholder content describing the personal, social, academic, and developmental areas supported throughout the Grade School experience.",
+
+    items: [
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Grade School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Grade School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Grade School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Grade School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Grade School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Grade School program.",
+      },
+    ],
+  },
+
+  classroomEnvironment: {
+    number: "05",
+    eyebrow: "Classroom Environment",
+    title: "Placeholder Classroom Environment Title.",
+    paragraphs: [
+      "Placeholder content describing the classroom environment, learning atmosphere, and relationships between students and teachers.",
+      "Placeholder content describing classroom routines, participation, collaboration, independence, and other aspects of the student experience.",
+    ],
+
+    items: [
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+    ],
+  },
+
+  studentJourney: {
+    number: "06",
+    eyebrow: "Student Journey",
+    title: "Placeholder Student Journey Title.",
+    description:
+      "Placeholder content describing how the Grade School program supports students as they progress toward the next stage of their education.",
+
+    items: [
+      {
+        number: "01",
+        title: "Placeholder Stage",
+        text: "Placeholder content describing the first stage of the student's learning journey.",
+      },
+      {
+        number: "02",
+        title: "Placeholder Stage",
+        text: "Placeholder content describing the second stage of the student's learning journey.",
+      },
+      {
+        number: "03",
+        title: "Placeholder Stage",
+        text: "Placeholder content describing the final stage and preparation for the next level.",
+      },
+    ],
+  },
+
+  families: {
+    number: "07",
+    eyebrow: "For Families",
+    title: "Placeholder Family Information Title.",
+    description:
+      "Placeholder content for families interested in the Grade School program. Replace this with information about enrollment, requirements, tuition, financial aid, and other next steps.",
+
+    admissionsLinks: [
+      {
+        number: "01",
+        title: "Enrollment",
+        href: "/admissions#enrollment",
+      },
+      {
+        number: "02",
+        title: "Requirements",
+        href: "/admissions#requirements",
+      },
+      {
+        number: "03",
+        title: "Tuition Fees",
+        href: "/admissions#tuition",
+      },
+      {
+        number: "04",
+        title: "Financial Aid",
+        href: "/admissions#financial-aid",
+      },
+    ],
+  },
+
+  relatedPrograms: {
+    eyebrow: "Basic Education",
+    title: "Placeholder Related Programs Title.",
+
+    items: [
+      {
+        eyebrow: "Early Learning",
+        title: "Preschool",
+        description:
+          "Placeholder content for the Preschool program and its learning experience.",
+        label: "Explore Preschool",
+        href: "/academics/basic-education/preschool",
+      },
+      {
+        eyebrow: "Next Stage",
+        title: "Junior High School",
+        description:
+          "Placeholder content for the Junior High School program and the next stage of education.",
+        label: "Explore Junior High",
+        href: "/academics/basic-education/junior-high-school",
+      },
+    ],
+  },
+};
+export const juniorHighSchoolContent = {
+  hero: {
+    label: "Basic Education",
+    title: "Junior High School",
+    desc: "Placeholder content for the Junior High School program. Replace this with an official introduction to the program, its learning approach, and what families can expect.",
+  },
+
+  overview: {
+    number: "01",
+    eyebrow: "Overview",
+    title: "Placeholder Overview Title.",
+    paragraphs: [
+      "Placeholder content for an overview of the Junior High School program, including its purpose, academic approach, and educational experience.",
+      "Placeholder content describing the learning opportunities, skills, responsibilities, and experiences students may develop throughout the program.",
+    ],
+  },
+
+  academicProgram: {
+    number: "02",
+    eyebrow: "Academic Program",
+    title: "Placeholder Academic Program Title.",
+    description:
+      "Placeholder content describing the Junior High School academic program, learning areas, and skills students may develop throughout the program.",
+
+    items: [
+      {
+        icon: "book-open",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Junior High School program.",
+      },
+      {
+        icon: "target",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Junior High School program.",
+      },
+      {
+        icon: "brain",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Junior High School program.",
+      },
+      {
+        icon: "compass",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Junior High School program.",
+      },
+      {
+        icon: "lightbulb",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Junior High School program.",
+      },
+      {
+        icon: "users",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key academic or learning area within the Junior High School program.",
+      },
+    ],
+  },
+
+  learningExperience: {
+    number: "03",
+    eyebrow: "Learning Experience",
+    title: "Placeholder Learning Experience Title.",
+    description:
+      "Placeholder content describing the Junior High School classroom experience, activities, projects, collaboration, and other learning opportunities available to students.",
+
+    image: {
+      src: "/Images/image4.jpg",
+      alt: "Placeholder image for Junior High School learning",
+    },
+
+    items: [
+      {
+        title: "Placeholder Learning Experience",
+        text: "Placeholder content describing an aspect of the Junior High School learning experience.",
+      },
+      {
+        title: "Placeholder Learning Experience",
+        text: "Placeholder content describing an aspect of the Junior High School learning experience.",
+      },
+      {
+        title: "Placeholder Learning Experience",
+        text: "Placeholder content describing an aspect of the Junior High School learning experience.",
+      },
+      {
+        title: "Placeholder Learning Experience",
+        text: "Placeholder content describing an aspect of the Junior High School learning experience.",
+      },
+    ],
+  },
+
+  studentDevelopment: {
+    number: "04",
+    eyebrow: "Student Development",
+    title: "Placeholder Student Development Title.",
+    description:
+      "Placeholder content describing the academic, personal, social, and developmental areas supported throughout the Junior High School experience.",
+
+    items: [
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Junior High School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Junior High School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Junior High School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Junior High School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Junior High School program.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the Junior High School program.",
+      },
+    ],
+  },
+
+  classroomCommunity: {
+    number: "05",
+    eyebrow: "Classroom & Community",
+    title: "Placeholder Classroom & Community Title.",
+    paragraphs: [
+      "Placeholder content describing the Junior High School classroom environment, learning atmosphere, and relationships between students and teachers.",
+      "Placeholder content describing classroom activities, participation, collaboration, leadership, responsibility, and other aspects of the school community.",
+    ],
+
+    items: [
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+      "Placeholder classroom feature",
+    ],
+  },
+
+  seniorHighPreparation: {
+    number: "06",
+    eyebrow: "Preparing for Senior High School",
+    title: "Placeholder Senior High Preparation Title.",
+    description:
+      "Placeholder content describing how the Junior High School program supports students as they prepare for the next stage of their education and future academic pathways.",
+
+    items: [
+      {
+        number: "01",
+        title: "Placeholder Preparation Area",
+        text: "Placeholder content describing an area of preparation for the student's next stage of education.",
+      },
+      {
+        number: "02",
+        title: "Placeholder Preparation Area",
+        text: "Placeholder content describing an area of preparation for the student's next stage of education.",
+      },
+      {
+        number: "03",
+        title: "Placeholder Preparation Area",
+        text: "Placeholder content describing an area of preparation for the student's next stage of education.",
+      },
+      {
+        number: "04",
+        title: "Placeholder Preparation Area",
+        text: "Placeholder content describing an area of preparation for the student's next stage of education.",
+      },
+    ],
+  },
+
+  families: {
+    number: "07",
+    eyebrow: "For Families",
+    title: "Placeholder Family Information Title.",
+    description:
+      "Placeholder content for families interested in the Junior High School program. Replace this with information about enrollment, requirements, tuition, financial aid, and other next steps.",
+
+    admissionsLinks: [
+      {
+        number: "01",
+        title: "Enrollment",
+        href: "/admissions#enrollment",
+      },
+      {
+        number: "02",
+        title: "Requirements",
+        href: "/admissions#requirements",
+      },
+      {
+        number: "03",
+        title: "Tuition Fees",
+        href: "/admissions#tuition",
+      },
+      {
+        number: "04",
+        title: "Financial Aid",
+        href: "/admissions#financial-aid",
+      },
+    ],
+  },
+
+  relatedPrograms: {
+    eyebrow: "Basic Education",
+    title: "Placeholder Related Programs Title.",
+
+    items: [
+      {
+        eyebrow: "Early Learning",
+        title: "Preschool",
+        description:
+          "Placeholder content for the Preschool program and its learning experience.",
+        label: "Explore Preschool",
+        href: "/academics/basic-education/preschool",
+      },
+      {
+        eyebrow: "Basic Education",
+        title: "Grade School",
+        description:
+          "Placeholder content for the Grade School program and its learning experience.",
+        label: "Explore Grade School",
+        href: "/academics/basic-education/grade-school",
+      },
+    ],
+  },
+};
+/* =========================================================
+   GENERAL ACADEMIC STRAND (GAS)
+========================================================= */
+
+export const gasContent = {
+  hero: {
+    label: "Senior High School",
+    title: "General Academic Strand (GAS)",
+    desc: "Placeholder content for the General Academic Strand (GAS). Replace this with an official introduction to the strand, its learning approach, and possible pathways.",
+  },
+
+  overview: {
+    number: "01",
+    eyebrow: "Overview",
+    title: "Placeholder Overview Title.",
+    paragraphs: [
+      "Placeholder content for an overview of the General Academic Strand, including its purpose, academic focus, and learning experience.",
+      "Placeholder content describing the opportunities, skills, and possible academic or career directions associated with the GAS program.",
+    ],
+  },
+
+  academicProgram: {
+    number: "02",
+    eyebrow: "Academic Program",
+    title: "Placeholder Academic Program Title.",
+    description:
+      "Placeholder content describing the academic learning areas, skills, and educational experiences included in the General Academic Strand.",
+
+    items: [
+      {
+        icon: "book-open",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key learning area within the General Academic Strand.",
+      },
+      {
+        icon: "lightbulb",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key learning area within the General Academic Strand.",
+      },
+      {
+        icon: "compass",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key learning area within the General Academic Strand.",
+      },
+      {
+        icon: "target",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key learning area within the General Academic Strand.",
+      },
+      {
+        icon: "users",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key learning area within the General Academic Strand.",
+      },
+      {
+        icon: "graduation-cap",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a key learning area within the General Academic Strand.",
+      },
+    ],
+  },
+
+  learningExperience: {
+    number: "03",
+    eyebrow: "Learning Experience",
+    title: "Placeholder Learning Experience Title.",
+    description:
+      "Placeholder content describing the learning activities, projects, discussions, and academic experiences included in the GAS program.",
+
+    image: {
+      src: "/Images/image3.jpg",
+      alt: "Placeholder image for Senior High School learning",
+    },
+
+    items: [
+      "Placeholder learning experience",
+      "Placeholder learning experience",
+      "Placeholder learning experience",
+      "Placeholder learning experience",
+    ],
+  },
+
+  studentDevelopment: {
+    number: "04",
+    eyebrow: "Student Development",
+    title: "Placeholder Student Development Title.",
+    items: [
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the General Academic Strand.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the General Academic Strand.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the General Academic Strand.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the General Academic Strand.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the General Academic Strand.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing a student development focus within the General Academic Strand.",
+      },
+    ],
+  },
+
+  futurePathways: {
+    number: "05",
+    eyebrow: "Future Pathways",
+    title: "Placeholder Future Pathways Title.",
+    description:
+      "Placeholder content describing possible educational, career, and personal pathways associated with the General Academic Strand.",
+
+    items: [
+      {
+        title: "Placeholder Pathway",
+        text: "Placeholder content describing a possible educational or future pathway.",
+      },
+      {
+        title: "Placeholder Pathway",
+        text: "Placeholder content describing a possible educational or future pathway.",
+      },
+      {
+        title: "Placeholder Pathway",
+        text: "Placeholder content describing transferable skills and possible future opportunities.",
+      },
+    ],
+  },
+
+  families: {
+    number: "06",
+    eyebrow: "For Families",
+    title: "Placeholder Family Information Title.",
+    description:
+      "Placeholder content for students and families interested in the General Academic Strand. Replace this with admissions information, requirements, tuition details, and available financial assistance.",
+
+    admissionsLinks: [
+      {
+        number: "01",
+        title: "Enrollment",
+        href: "/admissions#enrollment",
+        label: "Learn more",
+      },
+      {
+        number: "02",
+        title: "Requirements",
+        href: "/admissions#requirements",
+        label: "Learn more",
+      },
+      {
+        number: "03",
+        title: "Tuition Fees",
+        href: "/admissions#tuition",
+        label: "Learn more",
+      },
+      {
+        number: "04",
+        title: "Financial Aid",
+        href: "/admissions#financial-aid",
+        label: "Learn more",
+      },
+    ],
+  },
+
+  relatedPrograms: {
+    eyebrow: "Senior High School",
+    title: "Placeholder Related Programs Title",
+    overviewLink: {
+      label: "View all academics →",
+      href: "/academics",
+    },
+
+    items: [
+      {
+        eyebrow: "Senior High School",
+        title: "Senior High School Overview",
+        href: "/academics/senior-high-school",
+      },
+      {
+        eyebrow: "Senior High School",
+        title: "TVL – ICT",
+        href: "/academics/senior-high-school/tvl-ict",
+      },
+    ],
+  },
+};
+
+/* =========================================================
+   TVL – INFORMATION AND COMMUNICATIONS TECHNOLOGY
+========================================================= */
+
+export const tvlIctContent = {
+  hero: {
+    label: "Senior High School",
+    title: "TVL – Information and Communications Technology",
+    desc: "Placeholder content for the TVL – Information and Communications Technology strand. Replace this with an official introduction to the strand, its practical learning approach, and possible pathways.",
+  },
+
+  overview: {
+    number: "01",
+    eyebrow: "Overview",
+    title: "Placeholder Overview Title.",
+    paragraphs: [
+      "Placeholder content for an overview of the TVL – ICT strand, including its purpose, technical focus, and learning experience.",
+      "Placeholder content describing the practical activities, technical skills, digital competencies, and opportunities students may develop throughout the program.",
+    ],
+  },
+
+  learningAreas: {
+    number: "02",
+    eyebrow: "Learning Areas",
+    title: "Placeholder Learning Areas Title.",
+    description:
+      "Placeholder content describing the technical, digital, and practical learning areas included in the TVL – ICT strand.",
+
+    items: [
+      {
+        icon: "monitor",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a technical or digital learning area within the TVL – ICT strand.",
+      },
+      {
+        icon: "code-2",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a technical or digital learning area within the TVL – ICT strand.",
+      },
+      {
+        icon: "globe",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a technical or digital learning area within the TVL – ICT strand.",
+      },
+      {
+        icon: "lightbulb",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a technical or digital learning area within the TVL – ICT strand.",
+      },
+      {
+        icon: "users",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a technical or digital learning area within the TVL – ICT strand.",
+      },
+      {
+        icon: "briefcase",
+        title: "Placeholder Learning Area",
+        text: "Placeholder content describing a technical or workplace-related learning area within the TVL – ICT strand.",
+      },
+    ],
+  },
+
+  practicalLearning: {
+    number: "03",
+    eyebrow: "Practical Learning",
+    title: "Placeholder Practical Learning Title.",
+    description:
+      "Placeholder content describing the hands-on activities, projects, exercises, and practical experiences included in the TVL – ICT program.",
+
+    image: {
+      src: "/Images/image4.jpg",
+      alt: "Placeholder image for Senior High School technology learning",
+    },
+
+    items: [
+      "Placeholder practical learning activity",
+      "Placeholder practical learning activity",
+      "Placeholder practical learning activity",
+      "Placeholder practical learning activity",
+    ],
+  },
+
+  skillsDevelopment: {
+    number: "04",
+    eyebrow: "Skills Development",
+    title: "Placeholder Skills Development Title.",
+    items: [
+      {
+        title: "Placeholder Skill Area",
+        text: "Placeholder content describing a technical or transferable skill developed through the TVL – ICT program.",
+      },
+      {
+        title: "Placeholder Skill Area",
+        text: "Placeholder content describing a technical or transferable skill developed through the TVL – ICT program.",
+      },
+      {
+        title: "Placeholder Skill Area",
+        text: "Placeholder content describing a technical or transferable skill developed through the TVL – ICT program.",
+      },
+      {
+        title: "Placeholder Skill Area",
+        text: "Placeholder content describing a technical or transferable skill developed through the TVL – ICT program.",
+      },
+      {
+        title: "Placeholder Skill Area",
+        text: "Placeholder content describing a technical or transferable skill developed through the TVL – ICT program.",
+      },
+      {
+        title: "Placeholder Skill Area",
+        text: "Placeholder content describing a technical or transferable skill developed through the TVL – ICT program.",
+      },
+    ],
+  },
+
+  futurePathways: {
+    number: "05",
+    eyebrow: "Future Pathways",
+    title: "Placeholder Future Pathways Title.",
+    description:
+      "Placeholder content describing possible educational, technical, career, and other future pathways related to the TVL – ICT strand.",
+
+    items: [
+      {
+        title: "Placeholder Pathway",
+        text: "Placeholder content describing a possible higher education or academic pathway.",
+      },
+      {
+        title: "Placeholder Pathway",
+        text: "Placeholder content describing a possible technical training or skills development pathway.",
+      },
+      {
+        title: "Placeholder Pathway",
+        text: "Placeholder content describing a possible technology-related career or workplace pathway.",
+      },
+    ],
+  },
+
+  families: {
+    number: "06",
+    eyebrow: "For Students & Families",
+    title: "Placeholder Family Information Title.",
+    description:
+      "Placeholder content for students and families interested in the TVL – ICT strand. Replace this with admissions information, requirements, tuition details, and available financial assistance.",
+
+    admissionsLinks: [
+      {
+        number: "01",
+        title: "Enrollment",
+        label: "Learn more",
+        href: "/admissions#enrollment",
+      },
+      {
+        number: "02",
+        title: "Requirements",
+        label: "Learn more",
+        href: "/admissions#requirements",
+      },
+      {
+        number: "03",
+        title: "Tuition Fees",
+        label: "Learn more",
+        href: "/admissions#tuition",
+      },
+      {
+        number: "04",
+        title: "Financial Aid",
+        label: "Learn more",
+        href: "/admissions#financial-aid",
+      },
+    ],
+  },
+
+  relatedPrograms: {
+    eyebrow: "Senior High School",
+    title: "Placeholder Related Programs Title",
+
+    items: [
+      {
+        eyebrow: "Senior High School",
+        title: "Senior High School Overview",
+        description:
+          "Placeholder content for the Senior High School overview and available academic programs.",
+        label: "Explore Senior High School",
+        href: "/academics/senior-high-school",
+      },
+      {
+        eyebrow: "Senior High School",
+        title: "General Academic Strand (GAS)",
+        description:
+          "Placeholder content for the General Academic Strand and its academic learning experience.",
+        label: "Explore GAS",
+        href: "/academics/senior-high-school/gas",
+      },
+    ],
+  },
+};
+/* =========================================================
+   STUDENT LIFE
+========================================================= */
+
+export const studentLifeContent = {
+  hero: {
+    label: "Student Life",
+    title: "Placeholder Student Life Title.",
+    description:
+      "Placeholder content for the Student Life page. Replace this with an official introduction to student activities, experiences, community, and opportunities beyond the classroom.",
+  },
+
+  experience: {
+    eyebrow: "Student Experience",
+    title: "Placeholder Student Experience Title.",
+    description:
+      "Placeholder content describing the student experiences, activities, and opportunities available beyond regular classroom learning.",
+
+    areas: [
+      {
+        title: "Placeholder Student Life Area",
+        text: "Placeholder content describing clubs, activities, organizations, or other opportunities available to students.",
+      },
+      {
+        title: "Placeholder Student Life Area",
+        text: "Placeholder content describing creative, cultural, artistic, or expressive activities available to students.",
+      },
+      {
+        title: "Placeholder Student Life Area",
+        text: "Placeholder content describing sports, wellness, physical activities, or other student experiences.",
+      },
+    ],
+  },
+
+  community: {
+    eyebrow: "School Community",
+    title: "Placeholder School Community Title.",
+
+    paragraphs: [
+      "Placeholder content describing the relationships and connections that contribute to the school's student community.",
+      "Placeholder content describing opportunities for students to participate, collaborate, communicate, and take part in school programs and activities.",
+      "Placeholder content describing the values, qualities, and experiences that may be developed through participation in the school community.",
+    ],
+  },
+
+  development: {
+    eyebrow: "Student Development",
+    title: "Placeholder Student Development Title.",
+
+    areas: [
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing opportunities for students to develop leadership, responsibility, participation, and other related skills.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing opportunities for students to collaborate, communicate, cooperate, and learn with others.",
+      },
+      {
+        title: "Placeholder Development Area",
+        text: "Placeholder content describing opportunities for students to explore interests, build confidence, and develop skills beyond academics.",
+      },
+    ],
+  },
+};
+/* =========================================================
+   NEWS & EVENTS
+========================================================= */
+
+export const newsContent = {
+  hero: {
+    label: "News & Events",
+    title: "Placeholder News & Events Title.",
+    description:
+      "Placeholder content for the News & Events page. Replace this with an official introduction to school announcements, stories, upcoming events, and community updates.",
+  },
+
+  latestNews: {
+    eyebrow: "School News",
+    title: "Placeholder Latest News Title.",
+    description:
+      "Placeholder content for the latest school news and updates. Replace this with information about recent announcements, student activities, achievements, and community highlights.",
+
+    posts: [
+      {
+        category: "School Community",
+        title: "Placeholder News Title",
+        text: "Placeholder content for a school news article, announcement, community update, or featured story.",
+        href: "#",
+      },
+      {
+        category: "Student Achievement",
+        title: "Placeholder News Title",
+        text: "Placeholder content for a student achievement, project, accomplishment, activity, or school milestone.",
+        href: "#",
+      },
+      {
+        category: "Campus Life",
+        title: "Placeholder News Title",
+        text: "Placeholder content for a campus activity, student program, event, club, sports activity, or school experience.",
+        href: "#",
+      },
+    ],
+  },
+
+  schoolInformation: {
+    eyebrow: "School Information",
+    title: "Placeholder School Information Title.",
+    description:
+      "Placeholder content for school information and updates. Replace this with useful information that helps students and families stay connected with school activities and important dates.",
+
+    items: [
+      {
+        title: "Placeholder Information Category",
+        text: "Placeholder content for important notices, reminders, announcements, schedule updates, or other school information.",
+      },
+      {
+        title: "Placeholder Information Category",
+        text: "Placeholder content for student projects, accomplishments, activities, competitions, or other school milestones.",
+      },
+      {
+        title: "Placeholder Information Category",
+        text: "Placeholder content for family resources, guides, reminders, and information supporting student participation and learning.",
+      },
+    ],
+  },
+
+  events: {
+    eyebrow: "Calendar",
+    title: "Placeholder Upcoming Events Title.",
+    description:
+      "Placeholder content for upcoming school events, activities, important dates, and community gatherings.",
+
+    items: [
+      {
+        date: "01",
+        month: "OCT",
+        title: "Placeholder Event Title",
+        text: "Placeholder content describing an upcoming school event, activity, gathering, or community program.",
+      },
+      {
+        date: "08",
+        month: "OCT",
+        title: "Placeholder Event Title",
+        text: "Placeholder content describing an upcoming school event, orientation, meeting, or informational session.",
+      },
+      {
+        date: "18",
+        month: "OCT",
+        title: "Placeholder Event Title",
+        text: "Placeholder content describing an upcoming student activity, school program, or special event.",
+      },
+    ],
+  },
+
+  moreStories: {
+    eyebrow: "More From VSOP",
+    title: "Placeholder School Stories Title.",
+
+    posts: [
+      {
+        category: "Family Guide",
+        title: "Placeholder Story Title",
+        text: "Placeholder content for a family guide, resource, recommendation, or helpful information for parents and guardians.",
+      },
+      {
+        category: "Faculty",
+        title: "Placeholder Story Title",
+        text: "Placeholder content for a faculty or staff feature introducing members of the school community and their roles.",
+      },
+      {
+        category: "School Updates",
+        title: "Placeholder Story Title",
+        text: "Placeholder content for an important school notice, reminder, schedule update, or community announcement.",
+      },
+    ],
+  },
+};
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+export const contactContent = {
+  hero: {
+    label: "Contact",
+    title: "Placeholder Contact Page Title.",
+    description:
+      "Placeholder content for the Contact page. Replace this with an official introduction for inquiries, campus visits, admissions questions, partnerships, or general school information.",
+  },
+
+  contactInformation: [
+    {
+      label: "Visit",
+      value: "Placeholder School Address",
+      type: "location",
+    },
+    {
+      label: "Call",
+      value: "Placeholder Phone Number",
+      type: "phone",
+    },
+    {
+      label: "Email",
+      value: "Placeholder Email Address",
+      type: "email",
+    },
+  ],
+
+  form: {
+    fields: {
+      name: {
+        label: "Parent / Guardian name",
+        name: "name",
+        type: "text",
+        placeholder: "Placeholder name",
+      },
+
+      email: {
+        label: "Email",
+        name: "email",
+        type: "email",
+        placeholder: "Placeholder email address",
+      },
+
+      subject: {
+        label: "Subject",
+        name: "subject",
+        type: "text",
+        placeholder: "Placeholder inquiry subject",
+      },
+
+      message: {
+        label: "Message",
+        name: "message",
+        placeholder: "Placeholder inquiry message...",
+      },
+    },
+
+    submitLabel: "Send inquiry",
+
+    note: "Placeholder note for the contact form. Replace this with instructions about how inquiries are received and processed.",
+  },
+};
+/* =========================================================
+   APPLY NOW / ADMISSIONS
+========================================================= */
+
+export const applyNowContent = {
+  hero: {
+    label: "Admissions",
+    title: "Placeholder Apply Now Title",
+    description:
+      "Placeholder content for the Apply Now page. Replace this with an official introduction to the application process and information applicants should provide.",
+  },
+
+  form: {
+    eyebrow: "Application Form",
+
+    intro: {
+      title: "Placeholder Student Information Title",
+      description:
+        "Placeholder instructions for completing the application form. Replace this with the official guidance for required and optional fields.",
+    },
+
+    sections: {
+      student: {
+        title: "Student Information",
+        fields: {
+          firstName: {
+            id: "firstName",
+            name: "firstName",
+            label: "First Name *",
+            type: "text",
+            required: true,
+          },
+          middleName: {
+            id: "middleName",
+            name: "middleName",
+            label: "Middle Name",
+            type: "text",
+            required: false,
+          },
+          lastName: {
+            id: "lastName",
+            name: "lastName",
+            label: "Last Name *",
+            type: "text",
+            required: true,
+          },
+          birthDate: {
+            id: "birthDate",
+            name: "birthDate",
+            label: "Date of Birth *",
+            type: "date",
+            required: true,
+          },
+          gender: {
+            id: "gender",
+            name: "gender",
+            label: "Sex *",
+            placeholder: "Select",
+            required: true,
+            options: [
+              {
+                value: "male",
+                label: "Male",
+              },
+              {
+                value: "female",
+                label: "Female",
+              },
+            ],
+          },
+          gradeLevel: {
+            id: "gradeLevel",
+            name: "gradeLevel",
+            label: "Applying For *",
+            placeholder: "Select grade level",
+            required: true,
+            options: [
+              {
+                value: "preschool",
+                label: "Preschool",
+              },
+              {
+                value: "grade-school",
+                label: "Grade School",
+              },
+              {
+                value: "junior-high",
+                label: "Junior High School",
+              },
+              {
+                value: "senior-high",
+                label: "Senior High School",
+              },
+            ],
+          },
+        },
+      },
+
+      program: {
+        title: "Program Preference",
+        field: {
+          id: "program",
+          name: "program",
+          label: "Preferred Senior High School Strand",
+          placeholder: "Select a strand",
+          options: [
+            {
+              value: "gas",
+              label: "General Academic Strand (GAS)",
+            },
+            {
+              value: "tvl-ict",
+              label: "TVL – Information and Communications Technology",
+            },
+            {
+              value: "other",
+              label: "Other / Not Yet Decided",
+            },
+          ],
+          note: "For Senior High School applicants.",
+        },
+      },
+
+      guardian: {
+        title: "Parent or Guardian Information",
+        fields: {
+          guardianName: {
+            id: "guardianName",
+            name: "guardianName",
+            label: "Parent / Guardian Name *",
+            type: "text",
+            required: true,
+          },
+          relationship: {
+            id: "relationship",
+            name: "relationship",
+            label: "Relationship to Student *",
+            type: "text",
+            required: true,
+          },
+          email: {
+            id: "email",
+            name: "email",
+            label: "Email Address *",
+            type: "email",
+            required: true,
+          },
+          phone: {
+            id: "phone",
+            name: "phone",
+            label: "Contact Number *",
+            type: "tel",
+            required: true,
+          },
+        },
+      },
+
+      address: {
+        title: "Address",
+        fields: {
+          address: {
+            id: "address",
+            name: "address",
+            label: "Complete Address *",
+            required: true,
+            rows: 3,
+          },
+          city: {
+            id: "city",
+            name: "city",
+            label: "City / Municipality *",
+            type: "text",
+            required: true,
+          },
+          province: {
+            id: "province",
+            name: "province",
+            label: "Province",
+            type: "text",
+            required: false,
+          },
+          zip: {
+            id: "zip",
+            name: "zip",
+            label: "ZIP Code",
+            type: "text",
+            required: false,
+          },
+        },
+      },
+
+      previousSchool: {
+        title: "Previous School",
+        fields: {
+          previousSchool: {
+            id: "previousSchool",
+            name: "previousSchool",
+            label: "Previous School Name",
+            type: "text",
+            required: false,
+          },
+          schoolYear: {
+            id: "schoolYear",
+            name: "schoolYear",
+            label: "Last School Year Attended",
+            type: "text",
+            placeholder: "e.g. 2025–2026",
+            required: false,
+          },
+        },
+      },
+
+      additional: {
+        title: "Additional Information",
+        field: {
+          id: "message",
+          name: "message",
+          label: "Questions or Additional Notes",
+          placeholder:
+            "Placeholder text for questions or additional information.",
+          rows: 5,
+        },
+      },
+    },
+
+    consent:
+      "Placeholder consent statement regarding the accuracy of the information provided, application submission, and enrollment conditions. *",
+
+    submitLabel: "Submit Application",
+
+    reviewNote:
+      "Placeholder reminder to review the application information before submitting.",
+  },
+
+  sidebar: {
+    eyebrow: "Admissions",
+    title: "Placeholder Admissions Preparation Title",
+    description:
+      "Placeholder content for information applicants may review before completing the application.",
+
+    links: [
+      {
+        href: "/admissions/enrollment-procedures",
+        title: "Enrollment Procedures",
+        description:
+          "Placeholder description for the enrollment procedures page.",
+        icon: "graduation",
+      },
+      {
+        href: "/admissions/requirements",
+        title: "Admission Requirements",
+        description:
+          "Placeholder description for the admission requirements page.",
+        icon: "file",
+      },
+      {
+        href: "/admissions/tuition-fees",
+        title: "Tuition & Fees",
+        description: "Placeholder description for the tuition and fees page.",
+        icon: "wallet",
+      },
+      {
+        href: "/admissions/financial-aid",
+        title: "Financial Aid",
+        description:
+          "Placeholder description for the financial aid and subsidy information page.",
+        icon: "check",
+      },
+    ],
+
+    contact: {
+      question: "Placeholder application inquiry question.",
+      label: "Contact the school",
+      href: "/contact",
+    },
+  },
 };

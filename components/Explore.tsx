@@ -4,7 +4,7 @@ import { exploreContent } from "@/data/content";
 
 export function Explore() {
   return (
-    <section className="bg-[var(--school-surface)] py-14 sm:py-16 lg:py-20">
+    <section className="bg-[var(--school-surface-muted)] py-8 sm:py-10 lg:py-12">
       {/* SECTION INTRO */}
       <div className="w-full px-4 sm:px-6">
         <h2 className="sans-serif mx-auto text-center text-[28px] font-extrabold leading-tight tracking-[-0.03em] text-[var(--school-primary)] md:text-[40px]">
@@ -55,21 +55,20 @@ export function Explore() {
                 "
               />
 
-              {/* OVERLAY */}
+              {/* PREMIUM BLACK OVERLAY */}
               <div
                 className="
                   absolute
                   inset-0
                   bg-gradient-to-t
-                  from-black/75
-                  via-black/15
-                  to-black/5
-                  transition-[background]
-                  duration-[1200ms]
+                  from-black/80
+                  via-black/20
+                  to-transparent
+                  transition-opacity
+                  duration-[1000ms]
                   ease-[cubic-bezier(0.22,1,0.36,1)]
-                  group-hover:from-[var(--school-primary)]/80
-                  group-hover:via-[var(--school-primary)]/25
-                  group-hover:to-[var(--school-primary)]/5
+                  group-hover:from-black/90
+                  group-hover:via-black/30
                 "
               />
 
@@ -84,7 +83,7 @@ export function Explore() {
                       translate-y-2
                       text-[12px]
                       leading-5
-                      text-[var(--school-surface)]/80
+                      text-white/75
                       opacity-0
                       transition-[opacity,transform]
                       duration-[900ms]
@@ -97,7 +96,22 @@ export function Explore() {
                   </p>
 
                   {/* TITLE */}
-                  <h3 className="mt-1 text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] text-[var(--school-surface)] transition-[margin,transform] duration-[1000ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:mt-3 group-hover:-translate-y-1 md:text-[24px]">
+                  <h3
+                    className="
+                      mt-1
+                      text-[20px]
+                      font-semibold
+                      leading-[1.2]
+                      tracking-[-0.02em]
+                      text-white
+                      transition-[margin,transform]
+                      duration-[1000ms]
+                      ease-[cubic-bezier(0.22,1,0.36,1)]
+                      group-hover:mt-3
+                      group-hover:-translate-y-1
+                      md:text-[24px]
+                    "
+                  >
                     {level.title}
                   </h3>
                 </div>

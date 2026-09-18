@@ -3,12 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-  CalendarDays,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { calendarContent, monthlyContent } from "@/data/content";
 
@@ -40,60 +35,37 @@ export function SchoolCalendar() {
 
   const calendarMonth = calendarContent.months[activeMonth];
 
-  /*
-    The featured section uses the actual current calendar month.
-
-    June = 6
-    July = 7
-    ...
-    December = 12
-    January = 1
-    ...
-    May = 5
-  */
   const monthly = monthlyContent[currentMonth as keyof typeof monthlyContent];
 
   const hasPrevious = activeMonth > 0;
   const hasNext = activeMonth < calendarContent.months.length - 1;
 
   return (
-    <section className="bg-[#f5f6f2] px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+    <section className="bg-[var(--school-surface-muted)] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12">
       <div className="mx-auto w-full max-w-[1160px]">
-        {/* =====================================================
-            SECTION HEADER
-        ===================================================== */}
-
-        <div className="mb-12 max-w-2xl lg:mb-16">
-          <div className="mb-4 flex items-center gap-2 text-[#035921]">
-            <CalendarDays size={15} strokeWidth={2} />
-
-            <p className="text-[10px] font-bold uppercase tracking-[0.16em]">
+        {/* SECTION HEADER */}
+        <div className="mb-6 max-w-2xl">
+          <div className="mb-3 text-[var(--school-text)]">
+            <p className="text-[12px] font-bold uppercase tracking-[0.05em]">
               {calendarContent.eyebrow}
             </p>
           </div>
 
-          <h2 className="text-[34px] font-extrabold leading-[0.95] tracking-[-0.05em] text-[#0d0d0d] sm:text-[44px] lg:text-[52px]">
+          <h2 className="text-[28px] font-extrabold leading-[0.95] tracking-[-0.05em] text-[var(--school-primary)] sm:text-[40px]">
             {calendarContent.title}
           </h2>
 
-          <p className="mt-5 max-w-lg text-sm leading-6 text-[#666] sm:text-[15px]">
+          <p className="mt-4 max-w-lg text-[16px] leading-6 text-[var(--school-text-muted)] sm:text-[18px] sm:leading-7">
             {calendarContent.description}
           </p>
         </div>
 
-        {/* =====================================================
-            MAIN GRID
-        ===================================================== */}
-
-        <div className="grid items-start gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
-          {/* ===================================================
-              LEFT — CALENDAR
-          =================================================== */}
-
+        {/* MAIN GRID */}
+        <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
+          {/* LEFT — CALENDAR */}
           <div className="min-w-0">
             {/* MONTH SELECTOR */}
-
-            <div className="mb-6 flex items-center justify-between border border-[#d9dacd] bg-white px-4 py-3 sm:px-5">
+            <div className="mb-6 flex items-center justify-between border border-[var(--school-border)] bg-[var(--school-surface)] px-4 py-3 sm:px-5">
               <button
                 type="button"
                 onClick={() =>
@@ -102,13 +74,17 @@ export function SchoolCalendar() {
                 disabled={!hasPrevious}
                 aria-label={calendarContent.previousLabel}
                 className="
-                  flex h-10 w-10
-                  items-center justify-center
-                  border border-[#e1e2d9]
-                  text-[#035921]
-                  transition-all
-                  hover:bg-[#035921]
-                  hover:text-white
+                  flex
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  border
+                  border-[var(--school-border)]
+                  text-[var(--school-primary)]
+                  transition-colors
+                  hover:bg-[var(--school-primary)]
+                  hover:text-[var(--school-surface)]
                   disabled:pointer-events-none
                   disabled:opacity-20
                 "
@@ -117,11 +93,11 @@ export function SchoolCalendar() {
               </button>
 
               <div className="text-center">
-                <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#999]">
+                <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[var(--school-text-muted)]">
                   {calendarMonth.year}
                 </p>
 
-                <h3 className="mt-1 text-xl font-extrabold tracking-[-0.04em] text-[#0d0d0d]">
+                <h3 className="mt-1 text-[20px] font-extrabold tracking-[-0.04em] text-[var(--school-text)] sm:text-[24px]">
                   {calendarMonth.month}
                 </h3>
               </div>
@@ -134,13 +110,17 @@ export function SchoolCalendar() {
                 disabled={!hasNext}
                 aria-label={calendarContent.nextLabel}
                 className="
-                  flex h-10 w-10
-                  items-center justify-center
-                  border border-[#e1e2d9]
-                  text-[#035921]
-                  transition-all
-                  hover:bg-[#035921]
-                  hover:text-white
+                  flex
+                  h-10
+                  w-10
+                  items-center
+                  justify-center
+                  border
+                  border-[var(--school-border)]
+                  text-[var(--school-primary)]
+                  transition-colors
+                  hover:bg-[var(--school-primary)]
+                  hover:text-[var(--school-surface)]
                   disabled:pointer-events-none
                   disabled:opacity-20
                 "
@@ -150,8 +130,7 @@ export function SchoolCalendar() {
             </div>
 
             {/* EVENT LIST */}
-
-            <div className="overflow-hidden border border-[#d9dacd] bg-white">
+            <div className="overflow-hidden border border-[var(--school-border)] bg-[var(--school-surface)]">
               {calendarMonth.events.map((event, index) => (
                 <div
                   key={`${event.date}-${event.title}`}
@@ -163,143 +142,124 @@ export function SchoolCalendar() {
                     px-5
                     py-5
                     transition-colors
-                    hover:bg-[#fafbf8]
+                    hover:bg-[var(--school-surface-muted)]
                     sm:grid-cols-[60px_1fr_auto]
                     sm:items-center
-                    sm:gap-5
                     sm:px-6
                     ${
                       index !== calendarMonth.events.length - 1
-                        ? "border-b border-[#e6e7df]"
+                        ? "border-b border-[var(--school-border)]"
                         : ""
                     }
                   `}
                 >
                   {/* DATE */}
-
-                  <div className="flex flex-col">
-                    <span className="text-[25px] font-extrabold leading-none tracking-[-0.05em] text-[#035921]">
+                  <div className="flex flex-col items-center text-center">
+                    <span className="text-[20px] font-extrabold leading-none tracking-[-0.05em] text-[var(--school-secondary)] sm:text-[24px]">
                       {event.date}
                     </span>
 
-                    <span className="mt-1 text-[9px] font-bold uppercase tracking-[0.08em] text-[#999]">
+                    <span className="mt-1 text-[12px] font-bold uppercase tracking-[0.05em] text-[var(--school-text-muted)]">
                       {event.day.slice(0, 3)}
                     </span>
                   </div>
 
                   {/* TITLE */}
-
                   <div className="min-w-0">
-                    <h4 className="text-sm font-bold leading-5 text-[#0d0d0d] sm:text-[15px]">
+                    <h4 className="text-[14px] font-bold leading-5 text-[var(--school-text)]">
                       {event.title}
                     </h4>
 
-                    <span className="mt-2 inline-flex bg-[#f0f2eb] px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.08em] text-[#55705c] sm:hidden">
+                    <span className="mt-2 inline-flex bg-[var(--school-secondary-soft)]/30 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.08em] text-[var(--school-text-muted)] sm:hidden">
                       {event.category}
                     </span>
                   </div>
 
                   {/* DESKTOP CATEGORY */}
-
-                  <span className="hidden bg-[#f0f2eb] px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.08em] text-[#55705c] sm:inline-flex">
+                  <span className="hidden px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.05em] text-[var(--school-text-muted)] sm:inline-flex">
                     {event.category}
                   </span>
                 </div>
               ))}
             </div>
-
-            {/* FULL CALENDAR */}
-
-            <Link
-              href={calendarContent.fullCalendarHref}
-              className="
-                mt-6
-                inline-flex
-                items-center
-                gap-2
-                bg-[#035921]
-                px-4
-                py-2.5
-                text-[9px]
-                font-bold
-                uppercase
-                tracking-[0.1em]
-                text-white
-                transition-all
-                hover:bg-[#024719]
-              "
-            >
-              {calendarContent.fullCalendarLabel}
-              <ArrowUpRight size={13} />
-            </Link>
           </div>
 
-          {/* ===================================================
-              RIGHT — CURRENT MONTH FEATURE
-          =================================================== */}
-
-          <div className="lg:pt-0">
+          {/* RIGHT — CURRENT MONTH FEATURE */}
+          <div className="min-w-0">
             {monthly && (
-              <div className="overflow-hidden border border-[#d9dacd] bg-white">
-                {/* IMAGE */}
-
-                <div className="relative aspect-[4/3] overflow-hidden bg-[#e9e7db]">
+              <div className="overflow-hidden border border-[var(--school-border)] bg-[var(--school-surface)]">
+                {/* IMAGE BLOCK */}
+                <div className="group relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={monthly.image}
                     alt={monthly.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 hover:scale-[1.02]"
+                    className="
+                      object-cover
+                      transition-transform
+                      duration-[1200ms]
+                      ease-[cubic-bezier(0.22,1,0.36,1)]
+                      group-hover:scale-105
+                    "
                   />
 
-                  <div className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 backdrop-blur-sm">
-                    <p className="text-[8px] font-bold uppercase tracking-[0.12em] text-[#035921]">
+                  {/* BLACK IMAGE GRADIENT */}
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      bg-gradient-to-t
+                      from-[var(--school-text)]/75
+                      via-[var(--school-text)]/20
+                      to-[var(--school-text)]/5
+                      transition-opacity
+                      duration-[700ms]
+                      ease-out
+                      group-hover:opacity-90
+                    "
+                  />
+
+                  {/* FEATURED LABEL */}
+                  <div className="absolute left-4 top-4 bg-[var(--school-surface)]/95 px-3 py-1.5 backdrop-blur-sm">
+                    <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[var(--school-text)]">
                       {calendarContent.featuredLabel}
                     </p>
                   </div>
                 </div>
 
-                {/* CONTENT */}
-
+                {/* TEXT BLOCK */}
                 <div className="p-6 sm:p-7 lg:p-8">
-                  <div className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 bg-[#035921]" />
+                  <p className="text-[12px] font-bold uppercase tracking-[0.05em] text-[var(--school-text)]">
+                    {monthly.month}
+                  </p>
 
-                    <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-[#035921]">
-                      {monthly.month}
-                    </p>
-                  </div>
-
-                  <h3 className="mt-4 max-w-xl text-[27px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[#0d0d0d] sm:text-[32px]">
+                  <h3 className="mt-4 max-w-xl text-[20px] font-extrabold leading-[1.05] tracking-[-0.045em] text-[var(--school-primary)] sm:text-[24px]">
                     {monthly.title}
                   </h3>
 
-                  <p className="mt-4 max-w-xl text-sm leading-6 text-[#666]">
+                  <p className="mt-4 max-w-xl text-[14px] leading-6 text-[var(--school-text-muted)]">
                     {monthly.description}
                   </p>
 
-                  <Link
-                    href={monthly.button.href}
-                    className="
-                      mt-6
-                      inline-flex
-                      items-center
-                      gap-2
-                      border-b
-                      border-[#035921]
-                      pb-1
-                      text-[9px]
-                      font-bold
-                      uppercase
-                      tracking-[0.1em]
-                      text-[#035921]
-                      transition-opacity
-                      hover:opacity-60
-                    "
-                  >
-                    {monthly.button.label}
-                    <ArrowUpRight size={13} />
-                  </Link>
+                  {/* CONTENT-DRIVEN LINK */}
+                  <div className="mt-5 flex">
+                    <Link
+                      href={monthly.button.href}
+                      className="
+                        text-[12px]
+                        font-semibold
+                        text-[var(--school-text)]
+                        !underline
+                        decoration-1
+                        underline-offset-4
+                        transition-opacity
+                        hover:opacity-50
+                      "
+                    >
+                      {monthly.button.label}
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
